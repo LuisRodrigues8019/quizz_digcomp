@@ -49,7 +49,7 @@ border-radius: 6px;
 
 .main {
     min-height: 100vh;
-    background: url('images/back.png') no-repeat;
+    background: url('/images/windows.png') no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -176,9 +176,6 @@ border-radius: 6px;
     box-shadow: none;
 }
 
-
-.button a {
-   
-    color: #fff;
-   text-decoration: none;
+.button {
+    
 }

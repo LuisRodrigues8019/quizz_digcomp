@@ -68,7 +68,7 @@ body {
 }
 @media (max-width: 768px) {
   .home-content {
-    max-width: 520px !important;
+    
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -112,7 +112,7 @@ body {
 }
 @media (max-width: 768px) {
   .home-content button {
-    margin-left: 6px;
+    margin-left: 2px;
   }
 }
 
@@ -134,10 +134,10 @@ body {
 
 @media (max-width: 768px) {
   .win-btn {
-    max-width: 520px !important;
-    width: 70px;
+    max-width: 430px !important;
+    width: 60px;
     height: 35px;
-    font-size: 14px;
+    font-size: 12px;
     border: 1px solid #fff;
     font-weight: 500;
   }
@@ -161,11 +161,10 @@ body {
 
 @media (max-width: 768px) {
   .hard-btn {
-    max-width: 520px !important;
-    width: 80px;
+    max-width: 430px !important;
+    width: 72px;
     height: 35px;
-    font-size: 14px;
-    font-size: 14px;
+    font-size: 12px;
     border: 1px solid #fff;
     font-weight: 500;
   }
@@ -189,7 +188,7 @@ body {
 
 @media (max-width: 768px) {
   .internet-btn {
-    max-width: 520px !important;
+    max-width: 430px !important;
     width: 60px;
     height: 35px;
     font-size: 12px;
@@ -215,7 +214,7 @@ body {
 }
 @media (max-width: 768px) {
   .res-btn {
-    max-width: 520px !important;
+    max-width: 430px !important;
     width: 120px;
     height: 35px;
     font-size: 12px;
@@ -241,8 +240,8 @@ body {
 
 @media (max-width: 768px) {
   .mail-btn {
-    max-width: 520px !important;
-    width: 80px;
+    max-width: 430px !important;
+    width: 70px;
     height: 35px;
     font-size: 12px;
     border: 1px solid #fff;

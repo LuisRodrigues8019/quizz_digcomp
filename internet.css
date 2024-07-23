@@ -61,7 +61,7 @@ body {
 }
 
 .home-content {
-  max-width: 500px;
+  max-width: 530px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -82,7 +82,7 @@ body {
 }
 
 .home-content .start-btn {
-  width: 190px;
+  width: 160px;
   height: 55px;
   background: #3b1386;
   border-radius: 6px;

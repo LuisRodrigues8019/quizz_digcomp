@@ -118,12 +118,13 @@ body {
 }
 
 @media (max-width: 768px) {
-  .win-btn
-   {
+  .win-btn {
     max-width: 520px !important;
-    width: 80px;
+    width: 70px;
     height: 35px;
     font-size: 14px;
+    border: 1px solid #fff;
+    font-weight: 400;
   }
 }
 
@@ -144,14 +145,13 @@ body {
 }
 
 @media (max-width: 768px) {
-    .hard-btn
-     {
-      max-width: 520px !important;
-      width: 80px;
-      height: 35px;
-      font-size: 14px;
-    }
+  .hard-btn {
+    max-width: 520px !important;
+    width: 80px;
+    height: 35px;
+    font-size: 14px;
   }
+}
 
 .internet-btn {
   width: 100px;
@@ -170,14 +170,13 @@ body {
 }
 
 @media (max-width: 768px) {
-    .internet-btn
-     {
-      max-width: 520px !important;
-      width: 80px;
-      height: 35px;
-      font-size: 12px;
-    }
+  .internet-btn {
+    max-width: 520px !important;
+    width: 80px;
+    height: 35px;
+    font-size: 12px;
   }
+}
 
 .res-btn {
   width: 180px;
@@ -195,14 +194,13 @@ body {
   transition: 0.5s;
 }
 @media (max-width: 768px) {
-    .res-btn
-     {
-      max-width: 520px !important;
-      width: 120px;
-      height: 35px;
-      font-size: 12px;
-    }
+  .res-btn {
+    max-width: 520px !important;
+    width: 120px;
+    height: 35px;
+    font-size: 12px;
   }
+}
 
 .mail-btn {
   width: 100px;
@@ -220,14 +218,13 @@ body {
 }
 
 @media (max-width: 768px) {
-    .mail-btn
-     {
-      max-width: 520px !important;
-      width: 80px;
-      height: 35px;
-      font-size: 12px;
-    }
+  .mail-btn {
+    max-width: 520px !important;
+    width: 80px;
+    height: 35px;
+    font-size: 12px;
   }
+}
 
 .win-btn:hover,
 .hard-btn:hover,

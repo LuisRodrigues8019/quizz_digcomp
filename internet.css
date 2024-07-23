@@ -47,7 +47,7 @@ body {
 
 .main {
   min-height: 100vh;
-  background: url('images/hardware.png') no-repeat;
+  background: url("images/internet.png") no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -70,7 +70,6 @@ body {
 .home-content h1 {
   font-size: 78px;
   font-weight: 700;
- 
 }
 
 .home-content p {
@@ -85,10 +84,10 @@ body {
 .home-content .start-btn {
   width: 190px;
   height: 55px;
-  background: #ff3131;
+  background: #3b1386;
   border-radius: 6px;
   border: 2px solid #fff;
-  box-shadow: 0 0 10px #ff3131;
+  box-shadow: 0 0 10px #3b1386;
   font-size: 18px;
   color: #fff;
   letter-spacing: 1px;

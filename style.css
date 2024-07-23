@@ -96,10 +96,25 @@ body {
   margin-top: 15px;
   font-weight: bold;
 }
+@media (max-width: 768px) {
+    .home-content P{
+        font-size: 15px;
+        text-align: center;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        margin-bottom: 30px;
+        margin-top: 15px;
+        font-weight: bold;
+    }   
+  }
 
 .home-content button {
   margin-left: 10px;
 }
+@media (max-width: 768px) {
+    .home-content button{
+        margin-left: 3px;
+    }
+  }
 
 .win-btn {
   width: 100px;

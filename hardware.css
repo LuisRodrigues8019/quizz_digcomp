@@ -47,7 +47,7 @@ body {
 
 .main {
   min-height: 100vh;
-  background: url('images/windows.png') no-repeat;
+  background: url('images/hardware.png') no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -98,6 +98,6 @@ body {
 }
 
 .home-content .start-btn:hover {
-  background: #eb6929;
+  background: #ff3131;
   box-shadow: none;
 }

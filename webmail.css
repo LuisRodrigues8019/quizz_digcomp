@@ -47,7 +47,7 @@ body {
 
 .main {
   min-height: 100vh;
-  background: url("images/reseaux.png") no-repeat;
+  background: url("images/webmail.png") no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -61,7 +61,7 @@ body {
 }
 
 .home-content {
-  max-width: 600px;
+  max-width: 530px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -84,10 +84,10 @@ body {
 .home-content .start-btn {
   width: 160px;
   height: 55px;
-  background: #FFBD59;
+  background: #006837;
   border-radius: 6px;
   border: 2px solid #fff;
-  box-shadow: 0 0 10px #FFBD59;
+  box-shadow: 0 0 10px #006837;
   font-size: 18px;
   color: #fff;
   letter-spacing: 1px;

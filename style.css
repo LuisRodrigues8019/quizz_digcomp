@@ -45,7 +45,7 @@ body {
   margin-left: 25px;
   transition: 0.3s;
 }
-@media (min-width: 344px) and (max-width: 837px) {
+@media (min-width: 338px) and (max-width: 837px) {
   .navbar {
     display: none;
   }
@@ -90,6 +90,13 @@ body {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
 }
+@media (max-width: 339px) {
+  .home-content h1 {
+  font-size: 49px;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+}
 
 .home-content p {
   font-size: 17px;
@@ -98,6 +105,16 @@ body {
   margin-bottom: 30px;
   margin-top: 15px;
   font-weight: bold;
+}
+@media (max-width: 339px) {
+  .home-content #texte {
+    font-size: 13px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+    margin-top: 25px;
+    font-weight: bold;
+  }
 }
 
 @media (min-width: 344px) and (max-width: 768px) {
@@ -125,7 +142,7 @@ body {
 }
 
 /* responsive boutons */
-@media (min-width: 344px) and (max-width: 768px) {
+@media (min-width: 338px) and (max-width: 768px) {
   .home-content {
     flex-direction: column;
   }

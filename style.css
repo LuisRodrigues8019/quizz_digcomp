@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: "poppins", sans-serif;
+  font-family: "poppins", sans-serif;
 }
 
 body {
@@ -32,8 +32,8 @@ body {
 }
 @media (min-width: 300px) and (max-width: 768px) {
   .logo {
-  width: 50px;
-  height: 49px;
+    width: 50px;
+    height: 49px;
   }
 }
 
@@ -41,11 +41,11 @@ body {
   font-size: 18px;
   color: #fff;
   text-decoration: none;
-  font-weight: 500;
-  margin-left: 25px;
+  font-weight: 400;
+  margin-left: 20px;
   transition: 0.3s;
 }
-@media (min-width: 300px) and (max-width: 837px) {
+@media (min-width: 300px) and (max-width: 930px) {
   .navbar {
     display: none;
   }
@@ -79,36 +79,37 @@ body {
 }
 
 .home-content h1 {
-  font-size: 78px;
+  font-size: 68px;
   font-weight: 700;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-@media (min-width: 339px) and (max-width: 768px) {
+@media (min-width: 406px) and (max-width: 768px) {
   .home-content h1 {
-  font-size: 54px;
-  font-weight: 700;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    font-size: 54px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
 }
-@media (min-width: 300px) and (max-width: 338px) {
+@media (min-width: 300px) and (max-width: 405px) {
   .home-content h1 {
-  font-size: 35px;
-  font-weight: 700;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    font-size: 40px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 0;
   }
 }
 
 .home-content p {
-  font-size: 17px;
+  font-size: 16px;
   text-align: center;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   margin-bottom: 30px;
   margin-top: 15px;
-  font-weight: bold;
+  font-weight: 600;
 }
-@media (min-width: 300px) and (max-width: 338px) {
-  .home-content #texte {
-    font-size: 12px;
+@media (min-width: 300px) and (max-width: 405px) {
+  .home-content p {
+    font-size: 11px;
     text-align: center;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     margin-bottom: 30px;
@@ -117,8 +118,8 @@ body {
   }
 }
 
-@media (min-width: 339px) and (max-width: 768px) {
-  .home-content #texte {
+@media (min-width: 406px) and (max-width: 768px) {
+  .home-content p {
     font-size: 14px;
     text-align: center;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -127,7 +128,6 @@ body {
     font-weight: bold;
   }
 }
-
 
 .button-container {
   display: flex;
@@ -154,16 +154,14 @@ body {
   }
   .button-container button {
     max-width: 90%;
-    
   }
-  .bottom-buttons{
+  .bottom-buttons {
     margin-top: 18px;
   }
 
   .bottom-group {
     gap: 15px;
   }
- 
 }
 
 .win-btn {
@@ -184,7 +182,7 @@ body {
 
 @media (min-width: 339px) and (max-width: 768px) {
   .win-btn {
-    width: 80px;
+    width: 88px;
     height: 50px;
     background: #004aad;
     border: 2px solid #fff;
@@ -195,9 +193,8 @@ body {
   }
 }
 
-
 .hard-btn {
-  width: 100px;
+  width: 110px;
   height: 45px;
   background: #ff3131;
   border: 2px solid #fff;
@@ -213,7 +210,7 @@ body {
 }
 @media (min-width: 339px) and (max-width: 768px) {
   .hard-btn {
-    width: 90px;
+    width: 94px;
     height: 50px;
     background: #ff3131;
     border: 2px solid #fff;
@@ -223,8 +220,6 @@ body {
     font-weight: 600;
   }
 }
-
-
 
 .internet-btn {
   width: 100px;
@@ -244,7 +239,7 @@ body {
 
 @media (min-width: 339px) and (max-width: 768px) {
   .internet-btn {
-    width: 80px;
+    width: 85px;
     height: 50px;
     background: #3b1386;
     border: 2px solid #fff;
@@ -256,7 +251,7 @@ body {
 }
 
 .res-btn {
-  width: 180px;
+  width: 190px;
   height: 45px;
   background: #ffbd59;
   border: 2px solid #fff;
@@ -272,7 +267,7 @@ body {
 }
 @media (min-width: 339px) and (max-width: 768px) {
   .res-btn {
-    width: 150px;
+    width: 165px;
     height: 50px;
     background: #ffbd59;
     border: 2px solid #fff;
@@ -283,9 +278,8 @@ body {
   }
 }
 
-
 .mail-btn {
-  width: 100px;
+  width: 105px;
   height: 45px;
   background: #006837;
   border: 2px solid #fff;
@@ -301,7 +295,7 @@ body {
 
 @media (min-width: 339px) and (max-width: 768px) {
   .mail-btn {
-    width: 83px;
+    width: 89px;
     height: 50px;
     background: #006837;
     border: 2px solid #fff;
@@ -321,8 +315,8 @@ body {
   box-shadow: none;
 }
 
-.top-buttons a, .bottom-buttons a{
+.top-buttons a,
+.bottom-buttons a {
   color: #fff;
   text-decoration: none;
 }
-

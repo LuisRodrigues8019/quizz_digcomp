@@ -277,8 +277,8 @@ body {
 
 .quiz-section {
   position: relative;
-  left: -50%;
-  /*left: 0;*/
+  /*left: -50%;*/
+  left: 0;
   width: 100%;
   background: #09001d;
   display: flex;
@@ -364,6 +364,22 @@ body {
   border-color: rgba(255, 255, 255, 0.1);
 }
 
+.option-list .option.correct {
+  background: #09001d;
+  color: #00a63d;
+  border-color: #00a63d;
+}
+
+.option-list .option.incorrect {
+  background: #09001d;
+  color: #a60045;
+  border-color: #a60045;
+}
+
+.option-list .option.disabled {
+  pointer-events: none;
+}
+
 .quiz-box .quiz-footer {
   display: flex;
   justify-content: space-between;
@@ -389,11 +405,116 @@ body {
   color: rgba(255, 255, 255, 0.3);
   font-weight: 600;
   cursor: pointer;
-  /*pointer-events: none;*/
+  pointer-events: none;
   transition: 0.5s;
 }
 
-.quiz-footer .next-btn:hover {
+.quiz-footer .next-btn.active {
+  pointer-events: auto;
+  background-color: #dd743f;
+  border-color: #dd743f;
+  color: #fff;
+}
+
+.quiz-footer .next-btn.active:hover {
   background: #dd743f;
   background-color: #dd743f;
+}
+
+.quiz-section .result-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  background: transparent;
+  border: 2px solid #dd743f;
+  border-radius: 6px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result-box h2 {
+  font-size: 52px;
+}
+
+.result-box .percentage-container {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0 40px;
+}
+
+.percentage-container .circular-progress {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background: conic-gradient(#dd743f 3.6deg, rgba(255, 255, 255, 0.1) 0deg);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.percentage-container .circular-progress::before {
+  content: '';
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  background: #09001d;
+  border-radius: 50%;
+
+}
+
+.circular-progress .progress-value {
+  font-size: 45px;
+  font-weight: 600;
+}
+
+.percentage-container .score-text {
+  font-size: 26px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.result-box .buttons{
+  display: flex;
+}
+
+.buttons button {
+  width: 130px;
+  height: 47px;
+  background: #dd743f;
+  border: 2px solid #dd743f;
+  outline: none;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 600;
+  margin: 0 7px 20px;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.buttons button:nth-child(1):hover {
+  background: #eb6929;
+  border-color: #eb6929;
+}
+
+.buttons button:nth-child(3):hover {
+  background: #eb6929;
+  border-color: #eb6929;
+}
+
+.buttons button:nth-child(2) {
+  background: transparent;
+  color: #dd743f;
+}
+
+.buttons button:nth-child(2):hover {
+  background: #dd743f;
+  color: #fff;
 }

@@ -38,16 +38,17 @@ body {
   }
 }
 
-.logohome {
+.logohome-link {
   display: none;
 }
 
 @media (min-width: 300px) and (max-width: 768px) {
-  .logohome {
+  .logohome-link {
     width: 60px;
     height: 59px;
     display: inline;
     margin-right: 10px;
+  
   }
 }
 

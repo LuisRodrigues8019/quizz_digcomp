@@ -18,19 +18,65 @@
           <a href="reseaux.html">Réseaux-Sociaux</a>
           <a href="">Webmail</a>
         </nav>
-        <a href="index.html"><img class="logohome" src="images/logohome.png" /></a>
+        <a href="index.html" class="logohome-link">
+          <img class="logohome" src="images/logohome.png" />
+        </a>
       </header>
-
-      <section class="home">
-        <div class="home-content">
-          <h1>Windows</h1>
-          <p>
-            Quiz sur Windows et l'explorateur de windows. <br>
-            Cliquez sur le bouton pour démarrer le Quiz.
-          </p>
-          <button class="start-btn">Démarrer</button>
-        </div>
-      </section>
+      <div class="container">
+        <section class="quiz-section">
+          <div class="quiz-box">
+            <h1>Digcomp</h1>
+            <div class="quiz-header">
+              <span>Quiz Windows</span>
+              <span class="header-score">Score: 0 / 11</span>
+            </div>
+            <h2 class="question-text">Qu'est-ce que Windows 10 ?</h2>
+            <div class="option-list">
+              <!-- <div class="option">
+                <span>A. Une suite office</span>
+              </div>
+              <div class="option">
+                <span>B. Un sytéme d'explotation</span>
+              </div>
+              <div class="option">
+                <span>C. Un logiciel de traitement de texte</span>
+              </div>
+              <div class="option">
+                <span>D. Un logiciel tableur</span>
+              </div>-->
+            </div>
+            <div class="quiz-footer">
+              <span class="question-total"> 1 sur 11 Questions</span>
+              <button class="next-btn">Suivant</button>
+            </div>
+          </div>
+        </section>
+        <section class="home">
+          <div class="home-content">
+            <h1>Windows</h1>
+            <p>
+              Quiz sur Windows et l'explorateur de windows. <br />
+              Cliquez sur le bouton pour démarrer le Quiz.
+            </p>
+            <button class="start-btn">Démarrer</button>
+          </div>
+        </section>
+      </div>
     </main>
+    <div class="popup-info">
+      <h2>Quiz Guide</h2>
+      <span class="info">1. Lorem ipsum dolor sit amet consectetur.</span>
+      <span class="info">2. Lorem ipsum dolor sit amet consectetur.</span>
+      <span class="info">3. Lorem ipsum dolor sit amet consectetur.</span>
+      <span class="info">4. Lorem ipsum dolor sit amet consectetur.</span>
+      <span class="info">5. Lorem ipsum dolor sit amet consectetur.</span>
+      <div class="btn-groupe">
+        <button class="info-btn exit-btn">Quitter Quiz</button>
+        <a href="#" class="info-btn continue-btn">continuer</a>
+      </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

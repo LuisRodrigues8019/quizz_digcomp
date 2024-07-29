@@ -38,6 +38,20 @@ body {
   }
 }
 
+.logohome-link {
+  display: none;
+}
+
+@media (min-width: 300px) and (max-width: 768px) {
+  .logohome-link {
+    width: 60px;
+    height: 59px;
+    display: inline;
+    margin-right: 10px;
+  
+  }
+}
+
 .navbar a {
   font-size: 18px;
   color: #fff;

@@ -9,6 +9,8 @@ const resultBox = document.querySelector(".result-box");
 const tryAgainBtn = document.querySelector(".tryAgain-btn");
 const goHomeBtn = document.querySelector(".goHome-btn");
 
+
+
 startBtn.onclick = () => {
   popupInfo.classList.add("active");
   main.classList.add("active");
@@ -96,6 +98,13 @@ function showQuestions(index) {
   for (let i = 0; i < option.length; i++) {
     option[i].setAttribute("onClick", "optionSelected(this)");
   }
+  const imgBtn = document.querySelector(".img-btn");
+  if (index === 1) { // index 1 correspond à la question 2
+    imgBtn.classList.add("active");
+  } else {
+    imgBtn.classList.remove("active");
+  }
+
 }
 
 function optionSelected(answer) {
@@ -128,7 +137,7 @@ function optionSelected(answer) {
 
 function questionCounter(index) {
   const questionTotal = document.querySelector(".question-total");
-  questionTotal.textContent = `${index} of ${questions.length} Questions`;
+  questionTotal.textContent = `${index} sur ${questions.length} Questions`;
 }
 
 function headerScore() {

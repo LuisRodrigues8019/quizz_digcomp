@@ -36,9 +36,9 @@ let questions = [
   {
     numb: 5,
     question: "Comment épingler une application dans la barre des tâches?",
-    answer: "A. Clic droit sur l’application, épinglé à la barre des tâches",
+    answer: "A. Clic droit sur l’application, option épinglé à la barre des tâches",
     options: [
-      "A. Clic droit sur l’application, épinglé à la barre des tâches",
+      "A. Clic droit sur l’application, option épinglé à la barre des tâches",
       "B. Clic gauche sur l’application, épinglé à la barre des tâches",
       "C. Double Clic gauche sur l’application, épinglé à la barre des tâches",
       "D. Double Clic droit sur l’application, épinglé à la barre des tâches",
@@ -71,10 +71,10 @@ let questions = [
   {
     numb: 8,
     question: "Comment récupère un fichier qui se trouve dans la corbeille?",
-    answer: "B. Dans la corbeille, restaurer les éléments sélectionnés",
+    answer: "B. Dans la corbeille, selectionner l'élement ensuite option restaurer les éléments sélectionnés",
     options: [
       "A. Dans la corbeille, restaurer tous les éléments",
-      "B. Dans la corbeille, restaurer les éléments sélectionnés",
+      "B. Dans la corbeille, selectionner l'élement ensuite option restaurer les éléments sélectionnés",
       "C. Dans la corbeille, vider la corbeille",
       "D. Dans la corbeille, récupère un élément",
     ],

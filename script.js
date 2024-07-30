@@ -1,26 +1,27 @@
-const startBtn = document.querySelector(".start-btn");
-const popupInfo = document.querySelector(".popup-info");
-const exitBtn = document.querySelector(".exit-btn");
-const main = document.querySelector(".main");
-const continueBtn = document.querySelector(".continue-btn");
-const quizSection = document.querySelector(".quiz-section");
-const quizBox = document.querySelector(".quiz-box");
+const startBtn = document.querySelector('.start-btn');
+const popupInfo = document.querySelector('.popup-info');
+const exitBtn = document.querySelector('.exit-btn');
+const main = document.querySelector('.main');
+const continueBtn = document.querySelector('.continue-btn');
+const quizSection = document.querySelector('.quiz-section');
+const quizBox = document.querySelector('.quiz-box');
+const resultBox = document.querySelector('.result-box');
 
 startBtn.onclick = () => {
-  popupInfo.classList.add("active");
-  main.classList.add("active");
+  popupInfo.classList.add('active');
+  main.classList.add('active');
 };
 
 exitBtn.onclick = () => {
-  popupInfo.classList.remove("active");
-  main.classList.remove("active");
+  popupInfo.classList.remove('active');
+  main.classList.remove('active');
 };
 
 continueBtn.onclick = () => {
-  quizSection.classList.add("active");
-  popupInfo.classList.remove("active");
-  main.classList.remove("active");
-  quizBox.classList.add("active");
+  quizSection.classList.add('active');
+  popupInfo.classList.remove('active');
+  main.classList.remove('active');
+  quizBox.classList.add('active');
 
   showQuestions(0);
   questionCounter(1);
@@ -31,7 +32,7 @@ let questionCount = 0;
 let questionNumb = 1;
 let userScore = 0;
 
-const nextBtn = document.querySelector(".next-btn");
+const nextBtn = document.querySelector('.next-btn');
 
 nextBtn.onclick = () => {
   if (questionCount < questions.length - 1) {
@@ -42,7 +43,7 @@ nextBtn.onclick = () => {
     questionNumb++;
     questionCounter(questionNumb);
   } else {
-    console.log('questionaire terminer')
+    showResultBox();
   }
 };
 
@@ -78,7 +79,7 @@ function optionSelected(answer) {
     headerScore();
   } else {
     answer.classList.add("incorrect");
-
+  
     //if answer incorrect, auto selected correct answer
     for (let i = 0; i < allOptions; i++) {
       if (optionList.children[i].textContent == correctAnswer) {
@@ -104,4 +105,9 @@ function questionCounter(index) {
 function headerScore() {
   const headerScoreText = document.querySelector(".header-score");
   headerScoreText.textContent = `Score: ${userScore} / ${questions.length}`;
+}
+
+function showResultBox() {
+  quizBox.classList.remove('active');
+  resultBox.classList.add('active');
 }

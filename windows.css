@@ -277,8 +277,7 @@ body {
 
 .quiz-section {
   position: relative;
-  /*left: -50%;*/
-  left: 0;
+  left: -50%;
   width: 100%;
   background: #09001d;
   display: flex;
@@ -305,6 +304,8 @@ body {
   opacity: 0;
   pointer-events: none;
   transform: scale(0.9);
+  transition: 0.3s ease;
+  transition-delay: 0s;
 }
 
 .quiz-section .quiz-box.active {
@@ -425,7 +426,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.9);
   width: 500px;
   background: transparent;
   border: 2px solid #dd743f;
@@ -434,6 +435,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.quiz-section .result-box.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .result-box h2 {
@@ -460,16 +470,16 @@ body {
 }
 
 .percentage-container .circular-progress::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 210px;
   height: 210px;
   background: #09001d;
   border-radius: 50%;
-
 }
 
 .circular-progress .progress-value {
+  position: relative;
   font-size: 45px;
   font-weight: 600;
 }
@@ -480,14 +490,14 @@ body {
   margin-top: 20px;
 }
 
-.result-box .buttons{
+.result-box .buttons {
   display: flex;
 }
 
 .buttons button {
   width: 130px;
   height: 47px;
-  background: #dd743f;
+  background: #eb6929;
   border: 2px solid #dd743f;
   outline: none;
   border-radius: 6px;
@@ -496,17 +506,17 @@ body {
   font-weight: 600;
   margin: 0 7px 20px;
   cursor: pointer;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .buttons button:nth-child(1):hover {
-  background: #eb6929;
-  border-color: #eb6929;
+  background: #dd743f;
+  border-color: #dd743f;
 }
 
 .buttons button:nth-child(3):hover {
-  background: #eb6929;
-  border-color: #eb6929;
+  background: #dd743f;
+  border-color: #dd743f;
 }
 
 .buttons button:nth-child(2) {

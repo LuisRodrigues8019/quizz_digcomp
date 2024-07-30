@@ -99,10 +99,18 @@ function showQuestions(index) {
     option[i].setAttribute("onClick", "optionSelected(this)");
   }
   const imgBtn = document.querySelector(".img-btn");
-  if (index === 1) { // index 1 correspond à la question 2
+
+  // Simule la condition d'affichage
+  if (index === 1) {
     imgBtn.classList.add("active");
+    setTimeout(() => {
+      imgBtn.classList.add("visible");
+    }, 10); // Délai pour appliquer l'animation de transition
   } else {
-    imgBtn.classList.remove("active");
+    imgBtn.classList.remove("visible");
+    setTimeout(() => {
+      imgBtn.classList.remove("active");
+    }, 300); // Doit correspondre à la durée de la transition CSS
   }
 
 }

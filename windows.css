@@ -423,12 +423,14 @@ body {
   background-color: #dd743f;
 }
 
-.quiz-footer .img-btn {
-  display: none;
+.img-btn {
+  display: none; /* Masquer par défaut */
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
 }
 
-.quiz-footer .img-btn.active {
-  display: block; /* Afficher l'élément */
+.img-btn.active {
+  display: block; /* Afficher quand active */
   pointer-events: auto;
   background-color: #dd743f;
   border-color: #dd743f;
@@ -440,8 +442,17 @@ body {
   border-radius: 6px;
   font-size: 16px;
   font-weight: 600;
+  opacity: 0; /* Commence invisible */
+  transform: scale(0.95); /* Optionnel: réduction pour effet zoom */
   cursor: pointer;
 }
+
+.img-btn.active.visible {
+  opacity: 1;
+  transform: scale(1); /* Retour à la taille normale pour l'animation de zoom */
+  
+}
+
 
 
 .quiz-section .result-box {

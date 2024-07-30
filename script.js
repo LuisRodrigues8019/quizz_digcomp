@@ -1,44 +1,74 @@
-const startBtn = document.querySelector('.start-btn');
-const popupInfo = document.querySelector('.popup-info');
-const exitBtn = document.querySelector('.exit-btn');
-const main = document.querySelector('.main');
-const continueBtn = document.querySelector('.continue-btn');
-const quizSection = document.querySelector('.quiz-section');
-const quizBox = document.querySelector('.quiz-box');
-const resultBox = document.querySelector('.result-box');
+const startBtn = document.querySelector(".start-btn");
+const popupInfo = document.querySelector(".popup-info");
+const exitBtn = document.querySelector(".exit-btn");
+const main = document.querySelector(".main");
+const continueBtn = document.querySelector(".continue-btn");
+const quizSection = document.querySelector(".quiz-section");
+const quizBox = document.querySelector(".quiz-box");
+const resultBox = document.querySelector(".result-box");
+const tryAgainBtn = document.querySelector(".tryAgain-btn");
+const goHomeBtn = document.querySelector(".goHome-btn");
 
 startBtn.onclick = () => {
-  popupInfo.classList.add('active');
-  main.classList.add('active');
+  popupInfo.classList.add("active");
+  main.classList.add("active");
 };
 
 exitBtn.onclick = () => {
-  popupInfo.classList.remove('active');
-  main.classList.remove('active');
+  popupInfo.classList.remove("active");
+  main.classList.remove("active");
 };
 
 continueBtn.onclick = () => {
-  quizSection.classList.add('active');
-  popupInfo.classList.remove('active');
-  main.classList.remove('active');
-  quizBox.classList.add('active');
+  quizSection.classList.add("active");
+  popupInfo.classList.remove("active");
+  main.classList.remove("active");
+  quizBox.classList.add("active");
 
   showQuestions(0);
   questionCounter(1);
   headerScore();
 };
 
+tryAgainBtn.onclick = () => {
+  quizBox.classList.add("active");
+  nextBtn.classList.remove("active");
+  resultBox.classList.remove("active");
+
+  questionCount = 0;
+  questionNumb = 1;
+  userScore = 0;
+  showQuestions(questionCount);
+  questionCounter(questionNumb);
+
+  headerScore();
+};
+
+goHomeBtn.onclick = () => {
+  quizSection.classList.remove("active");
+  nextBtn.classList.remove("active");
+  resultBox.classList.remove("active");
+
+  questionCount = 0;
+  questionNumb = 1;
+  userScore = 0;
+  showQuestions(questionCount);
+  questionCounter(questionNumb);
+
+  
+};
+
 let questionCount = 0;
 let questionNumb = 1;
 let userScore = 0;
 
-const nextBtn = document.querySelector('.next-btn');
+const nextBtn = document.querySelector(".next-btn");
 
 nextBtn.onclick = () => {
   if (questionCount < questions.length - 1) {
     questionCount++;
     showQuestions(questionCount);
-    nextBtn.classList.remove('active');
+    nextBtn.classList.remove("active");
 
     questionNumb++;
     questionCounter(questionNumb);
@@ -79,7 +109,7 @@ function optionSelected(answer) {
     headerScore();
   } else {
     answer.classList.add("incorrect");
-  
+
     //if answer incorrect, auto selected correct answer
     for (let i = 0; i < allOptions; i++) {
       if (optionList.children[i].textContent == correctAnswer) {
@@ -93,8 +123,7 @@ function optionSelected(answer) {
     optionList.children[i].classList.add("disabled");
   }
 
-  nextBtn.classList.add('active');
-
+  nextBtn.classList.add("active");
 }
 
 function questionCounter(index) {
@@ -108,6 +137,30 @@ function headerScore() {
 }
 
 function showResultBox() {
-  quizBox.classList.remove('active');
-  resultBox.classList.add('active');
+  quizBox.classList.remove("active");
+  resultBox.classList.add("active");
+
+  const scoreText = document.querySelector(".score-text");
+  scoreText.textContent = `Votre score : ${userScore} sur ${questions.length}`;
+
+  const circularProgress = document.querySelector(".circular-progress");
+  const progressValue = document.querySelector(".progress-value");
+
+  let progressStartValue = -1;
+  let progressEndValue = Math.floor((userScore / questions.length) * 100);
+  let speed = 20;
+
+  let progress = setInterval(() => {
+    progressStartValue++;
+
+    progressValue.textContent = `${progressStartValue}%`;
+
+    circularProgress.style.background = `conic-gradient(#dd743f ${
+      progressStartValue * 3.6
+    }deg, rgba(255, 255, 255, 0.1) 0deg)`;
+
+    if (progressStartValue == progressEndValue) {
+      clearInterval(progress);
+    }
+  }, speed);
 }

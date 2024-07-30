@@ -410,7 +410,6 @@ body {
   transition: 0.5s;
 }
 
-
 .quiz-footer .next-btn.active {
   pointer-events: auto;
   background-color: #dd743f;
@@ -422,7 +421,7 @@ body {
   background: #dd743f;
   background-color: #dd743f;
 }
-
+/* button image */
 .img-btn {
   display: none; /* Masquer par défaut */
   pointer-events: none;
@@ -450,10 +449,49 @@ body {
 .img-btn.active.visible {
   opacity: 1;
   transform: scale(1); /* Retour à la taille normale pour l'animation de zoom */
-  
 }
 
+/* image popup */
 
+.popup-content {
+  display: none; /* Masquer par défaut */
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+  position: fixed; /* Utilisez fixed pour s'assurer qu'elle reste au-dessus du contenu */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centrer la popup */
+  z-index: 1000; /* Assurez-vous que la valeur est supérieure à celle des autres éléments */
+  border-radius: 8px;
+}
+
+.popup-content.active {
+  display: block; /* Afficher la popup lorsqu'elle est active */
+  pointer-events: auto;
+  width: 80%;
+  max-width: 700px;
+  background-color: white;
+  text-align: center;
+}
+
+.popup-content img {
+  max-width: 100%; /* Assure que l'image ne dépasse pas les limites du conteneur */
+  height: auto; /* Conserve les proportions de l'image */
+  display: block; /* Utiliser display block pour éliminer l'espace blanc en bas */
+  margin: 0 auto; /* Centre l'image horizontalement */
+  border-radius: 5px;
+}
+
+.close-btn {
+  position: absolute;
+  top: -20px;
+  right: 0px;
+  font-size: 50px;
+  font-weight: bold;
+  color: red;
+  cursor: pointer;
+  z-index: 1001;
+}
 
 .quiz-section .result-box {
   position: absolute;
@@ -562,7 +600,7 @@ body {
   color: #fff;
 }
 
-.link-pdf{
+.link-pdf {
   text-decoration: none;
   color: #fff;
 }

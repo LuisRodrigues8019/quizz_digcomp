@@ -9,8 +9,6 @@ const resultBox = document.querySelector(".result-box");
 const tryAgainBtn = document.querySelector(".tryAgain-btn");
 const goHomeBtn = document.querySelector(".goHome-btn");
 
-
-
 startBtn.onclick = () => {
   popupInfo.classList.add("active");
   main.classList.add("active");
@@ -56,8 +54,6 @@ goHomeBtn.onclick = () => {
   userScore = 0;
   showQuestions(questionCount);
   questionCounter(questionNumb);
-
-  
 };
 
 let questionCount = 0;
@@ -112,8 +108,76 @@ function showQuestions(index) {
       imgBtn.classList.remove("active");
     }, 300); // Doit correspondre à la durée de la transition CSS
   }
-
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const imgBtn = document.querySelector(".img-btn");
+  const popupContent = document.querySelector(".popup-content");
+  const closeBtn = document.querySelector(".close-btn");
+  const nextBtn = document.querySelector(".next-btn"); // Bouton suivant
+  const tryAgainBtn = document.querySelector(".tryagain-btn"); // Bouton "Try Again"
+
+  // Fonction pour afficher ou fermer la popup
+  function togglePopup(show) {
+    popupContent.classList.toggle("active", show);
+  }
+
+  // Fermer la popup en cliquant sur le bouton de fermeture
+  closeBtn.addEventListener("click", () => togglePopup(false));
+
+  // Fermer la popup en cliquant en dehors d'elle
+  window.addEventListener("click", (event) => {
+    if (event.target === popupContent) togglePopup(false);
+  });
+
+  // Fonction pour ouvrir la popup
+  function openPopup() {
+    togglePopup(true);
+  }
+
+  // Fonction pour mettre à jour l'état de l'interface selon la question
+  function onQuestionChange(index) {
+    const isQuestionTwo = index === 1;
+
+    imgBtn.classList.toggle("active", isQuestionTwo);
+
+    // Réinitialiser les écouteurs d'événements
+    imgBtn.removeEventListener("click", openPopup);
+
+    if (isQuestionTwo) {
+      imgBtn.addEventListener("click", openPopup);
+    } else {
+      togglePopup(false); // Ferme la popup si ce n'est pas la question 2
+    }
+  }
+
+  // Fermer la popup lorsqu'on passe à la question suivante
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      togglePopup(false);
+      // Exemple de logique pour changer de question
+      // onQuestionChange(newQuestionIndex);
+    });
+  }
+
+  // Redémarrer le quiz en cliquant sur le bouton "Try Again"
+  if (tryAgainBtn) {
+    tryAgainBtn.addEventListener("click", () => {
+      // Réinitialiser le quiz à la première question ou état initial
+      // Par exemple : onQuestionChange(0); // Pour revenir à la première question
+
+      // Assurez-vous de fermer la popup et de réinitialiser l'état si nécessaire
+      togglePopup(false);
+
+      // Réinitialisation des écouteurs d'événements pour imgBtn
+      imgBtn.removeEventListener("click", openPopup);
+      onQuestionChange(1); // Appel initial pour remettre l'état de la question 2
+    });
+  }
+
+  // Exemple d'appel de la fonction pour une question spécifique
+  onQuestionChange(1); // Appel initial pour la question numéro 2 (à remplacer selon votre logique)
+});
 
 function optionSelected(answer) {
   let userAnswer = answer.textContent;

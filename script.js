@@ -31,6 +31,7 @@ continueBtn.onclick = () => {
 };
 
 tryAgainBtn.onclick = () => {
+  sessionStorage.clear();
   quizBox.classList.add("active");
   nextBtn.classList.remove("active");
   resultBox.classList.remove("active");
@@ -42,6 +43,9 @@ tryAgainBtn.onclick = () => {
   questionCounter(questionNumb);
 
   headerScore();
+  //nouveau code
+  userAnswers.length = 0; // Vider l'array des réponses utilisateur
+  correctAnswers.length = 0;
 };
 
 goHomeBtn.onclick = () => {
@@ -178,6 +182,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Exemple d'appel de la fonction pour une question spécifique
   onQuestionChange(1); // Appel initial pour la question numéro 2 (à remplacer selon votre logique)
 });
+//objet pour correction.html
+const userAnswers = []; // Exemple d'initialisation
+const correctAnswers = questions.map((q) => q.answer);
 
 function optionSelected(answer) {
   let userAnswer = answer.textContent;
@@ -198,6 +205,9 @@ function optionSelected(answer) {
       }
     }
   }
+  // Stockage de la réponse de l'utilisateur correction.html
+  userAnswers.push(userAnswer);
+  correctAnswers.push(correctAnswer);
 
   //if user has selected, disable all options
   for (let i = 0; i < allOptions; i++) {
@@ -220,7 +230,6 @@ function headerScore() {
 function showResultBox() {
   quizBox.classList.remove("active");
   resultBox.classList.add("active");
-
   const scoreText = document.querySelector(".score-text");
   scoreText.textContent = `Votre score : ${userScore} sur ${questions.length}`;
 
@@ -244,4 +253,20 @@ function showResultBox() {
       clearInterval(progress);
     }
   }, speed);
+  // Stockage de la réponse de l'utilisateur correction.html
 }
+// lien vers correction.html
+document
+  .getElementById("correction-link")
+  .addEventListener("click", function (e) {
+    // Empêcher le comportement par défaut du lien
+    e.preventDefault();
+
+    // Effectuer des actions avant d'ouvrir la nouvelle page
+    sessionStorage.setItem("userAnswers", JSON.stringify(userAnswers));
+    sessionStorage.setItem("correctAnswers", JSON.stringify(correctAnswers));
+    sessionStorage.setItem("questions", JSON.stringify(questions));
+
+    // Ouvrir la page de correction dans un nouvel onglet
+    window.open("correction.html", "_blank");
+  });

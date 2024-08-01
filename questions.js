@@ -1,4 +1,4 @@
-let questions = [
+const questions = [
   {
     numb: 1,
     question: "Qu'est-ce que Windows 10?",

@@ -604,3 +604,14 @@ body {
   text-decoration: none;
   color: #fff;
 }
+
+.result-box .correction {
+  color: #dd743f;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.correction a {
+  text-decoration: none;
+  color: #dd743f;
+}

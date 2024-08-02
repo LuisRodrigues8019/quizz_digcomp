@@ -15,6 +15,7 @@ const questions = [
     question: "Quel est le nom de l'icône entourée en rouge dans l'image?",
     answer: "B. Explorateur de Windows",
     options: ["A. Word", "B. Explorateur de Windows", "C. Excel", "D. Windows"],
+    image: "images/windows-question2.png",
   },
   {
     numb: 3,
@@ -26,12 +27,19 @@ const questions = [
       "C. Microsoft Edge",
       "D. Microsoft Word",
     ],
+    image: "images/windows-questions3.png",
   },
   {
     numb: 4,
     question: "Dans l'image, quelle application est un raccourci ?",
     answer: "A. Google Chrome",
-    options: ["A. Google Chrome", "B. Word", "C. Excel", "D. Outlook"],
+    options: [
+      "A. Google Chrome",
+      "B. Mozila Firefox",
+      "C. Microsoft Edge",
+      "D. Word",
+    ],
+    image: "images/windows-questions4.png",
   },
   {
     numb: 5,
@@ -106,5 +114,41 @@ const questions = [
       "Comment appel-t-on l'endroit où sont stockés les fichiers supprimés?",
     answer: "B. La corbeille",
     options: ["A. La poubelle", "B. La corbeille", "C. Le tri", "D. La boite"],
+  },
+
+  {
+    numb: 12,
+    question: "Comment ouvre-t-on un document sur Windows ?",
+    answer: "B. Double clic gauche",
+    options: [
+      "A. Clic gauche",
+      "B. Double clic gauche",
+      "C. Clic droit",
+      "D. Double clic droit",
+    ],
+  },
+
+  {
+    numb: 13,
+    question: "Comment afficher-t-on un menu contextuel ?",
+    answer: "C. Clic droit",
+    options: [
+      "A. Clic gauche",
+      "B. Double clic gauche",
+      "C. Clic droit",
+      "D. Double clic droit",
+    ],
+  },
+
+  {
+    numb: 14,
+    question: "Comment ouvre-t-on une application dans la barre des taches ?",
+    answer: "A. Clic gauche",
+    options: [
+      "A. Clic gauche",
+      "B. Double clic gauche",
+      "C. Clic droit",
+      "D. Double clic droit",
+    ],
   },
 ];

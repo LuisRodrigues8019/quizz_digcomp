@@ -29,7 +29,22 @@
         color: green;
         font-weight: bold;
       }
-      .user-answer {
+      .user-answer.correct {
+        color: green;
+        font-weight: bold;
+      }
+      .user-answer.incorrect {
+        color: red;
+        font-weight: bold;
+      }
+      .status-text {
+        margin-left: 10px;
+        font-style: italic;
+      }
+      .status-text.correct {
+        color: green;
+      }
+      .status-text.incorrect {
         color: red;
       }
     </style>
@@ -45,7 +60,6 @@
         const correctionContent = document.getElementById("correction-content");
 
         // Récupérer les réponses de l'utilisateur et les réponses correctes depuis le Local Storage
-        //
         const userAnswers =
           JSON.parse(sessionStorage.getItem("userAnswers")) || [];
         const correctAnswers =
@@ -67,8 +81,23 @@
             // Réponse de l'utilisateur
             const userAnswer = document.createElement("p");
             userAnswer.textContent = `Votre réponse : ${userAnswers[index]}`;
-            userAnswer.classList.add("user-answer");
+            const isCorrect = userAnswers[index] === correctAnswers[index];
+            userAnswer.classList.add(
+              "user-answer",
+              isCorrect ? "correct" : "incorrect"
+            );
             correctionItem.appendChild(userAnswer);
+
+            // Indication de correction
+            const statusText = document.createElement("span");
+            statusText.textContent = isCorrect
+              ? "(Réponse correcte)"
+              : "(Réponse fausse)";
+            statusText.classList.add(
+              "status-text",
+              isCorrect ? "correct" : "incorrect"
+            );
+            userAnswer.appendChild(statusText);
 
             // Réponse correcte
             const correctAnswer = document.createElement("p");

@@ -1,3 +1,4 @@
+// Sélection des éléments DOM
 const startBtn = document.querySelector(".start-btn");
 const popupInfo = document.querySelector(".popup-info");
 const exitBtn = document.querySelector(".exit-btn");
@@ -8,180 +9,145 @@ const quizBox = document.querySelector(".quiz-box");
 const resultBox = document.querySelector(".result-box");
 const tryAgainBtn = document.querySelector(".tryAgain-btn");
 const goHomeBtn = document.querySelector(".goHome-btn");
+const nextBtn = document.querySelector(".next-btn");
+const optionList = document.querySelector(".option-list");
+const imgBtn = document.querySelector(".img-btn");
+const popupContent = document.querySelector(".popup-content");
+const closeBtn = document.querySelector(".close-btn");
 
-startBtn.onclick = () => {
-  popupInfo.classList.add("active");
-  main.classList.add("active");
-};
-
-exitBtn.onclick = () => {
-  popupInfo.classList.remove("active");
-  main.classList.remove("active");
-};
-
-continueBtn.onclick = () => {
-  quizSection.classList.add("active");
-  popupInfo.classList.remove("active");
-  main.classList.remove("active");
-  quizBox.classList.add("active");
-
-  showQuestions(0);
-  questionCounter(1);
-  headerScore();
-};
-
-tryAgainBtn.onclick = () => {
-  sessionStorage.clear();
-  quizBox.classList.add("active");
-  nextBtn.classList.remove("active");
-  resultBox.classList.remove("active");
-
-  questionCount = 0;
-  questionNumb = 1;
-  userScore = 0;
-  showQuestions(questionCount);
-  questionCounter(questionNumb);
-
-  headerScore();
-  //nouveau code
-  userAnswers.length = 0; // Vider l'array des réponses utilisateur
-  correctAnswers.length = 0;
-};
-
-goHomeBtn.onclick = () => {
-  quizSection.classList.remove("active");
-  nextBtn.classList.remove("active");
-  resultBox.classList.remove("active");
-
-  questionCount = 0;
-  questionNumb = 1;
-  userScore = 0;
-  showQuestions(questionCount);
-  questionCounter(questionNumb);
-};
-
+// Variables de contrôle du quiz
 let questionCount = 0;
 let questionNumb = 1;
 let userScore = 0;
 
-const nextBtn = document.querySelector(".next-btn");
+// Tableau des indices des questions pour afficher la popup
+const popupQuestionIndices = [1, 2, 3, 4];
 
-nextBtn.onclick = () => {
-  if (questionCount < questions.length - 1) {
-    questionCount++;
-    showQuestions(questionCount);
-    nextBtn.classList.remove("active");
+// Fonctions pour gérer l'affichage de la popup
+function togglePopup(show) {
+  popupContent.classList.toggle("active", show);
+}
 
-    questionNumb++;
-    questionCounter(questionNumb);
-  } else {
-    showResultBox();
-  }
-};
+function openPopup() {
+  togglePopup(true);
+}
 
-const optionList = document.querySelector(".option-list");
+function onQuestionChange(index) {
+  const showPopup = popupQuestionIndices.includes(index);
+  const question = questions[index];
 
-//getting questions and optiond from array
+  if (showPopup && question.image) {
+    // Mettre à jour l'image dans la popup
+    const popupImg = document.querySelector(".popup-content img");
+    popupImg.src = question.image;
 
-function showQuestions(index) {
-  const questionText = document.querySelector(".question-text");
-  questionText.textContent = `${questions[index].numb}. ${questions[index].question}`;
-
-  let optionTag = `<div class="option"><span>${questions[index].options[0]}</span></div>
-    <div class="option"><span>${questions[index].options[1]}</span></div>
-    <div class="option"><span>${questions[index].options[2]}</span></div>
-    <div class="option"><span>${questions[index].options[3]}</span></div>`;
-
-  optionList.innerHTML = optionTag;
-
-  const option = document.querySelectorAll(".option");
-  for (let i = 0; i < option.length; i++) {
-    option[i].setAttribute("onClick", "optionSelected(this)");
-  }
-  const imgBtn = document.querySelector(".img-btn");
-
-  // Simule la condition d'affichage
-  if (index === 1) {
     imgBtn.classList.add("active");
     setTimeout(() => {
       imgBtn.classList.add("visible");
-    }, 10); // Délai pour appliquer l'animation de transition
+    }, 10);
+    imgBtn.addEventListener("click", openPopup);
   } else {
     imgBtn.classList.remove("visible");
     setTimeout(() => {
       imgBtn.classList.remove("active");
-    }, 300); // Doit correspondre à la durée de la transition CSS
+    }, 300);
+    imgBtn.removeEventListener("click", openPopup);
   }
 }
 
+// Initialisation et gestion des événements
 document.addEventListener("DOMContentLoaded", () => {
-  const imgBtn = document.querySelector(".img-btn");
-  const popupContent = document.querySelector(".popup-content");
-  const closeBtn = document.querySelector(".close-btn");
-  const nextBtn = document.querySelector(".next-btn"); // Bouton suivant
-  const tryAgainBtn = document.querySelector(".tryagain-btn"); // Bouton "Try Again"
+  startBtn.onclick = () => {
+    popupInfo.classList.add("active");
+    main.classList.add("active");
+  };
 
-  // Fonction pour afficher ou fermer la popup
-  function togglePopup(show) {
-    popupContent.classList.toggle("active", show);
-  }
+  exitBtn.onclick = () => {
+    popupInfo.classList.remove("active");
+    main.classList.remove("active");
+  };
 
-  // Fermer la popup en cliquant sur le bouton de fermeture
+  continueBtn.onclick = () => {
+    quizSection.classList.add("active");
+    popupInfo.classList.remove("active");
+    main.classList.remove("active");
+    quizBox.classList.add("active");
+
+    showQuestions(0);
+    questionCounter(1);
+    headerScore();
+    onQuestionChange(0);
+  };
+
+  tryAgainBtn.onclick = () => {
+    sessionStorage.clear();
+    quizBox.classList.add("active");
+    nextBtn.classList.remove("active");
+    resultBox.classList.remove("active");
+
+    questionCount = 0;
+    questionNumb = 1;
+    userScore = 0;
+    showQuestions(questionCount);
+    questionCounter(questionNumb);
+    headerScore();
+    userAnswers.length = 0;
+    correctAnswers.length = 0;
+    onQuestionChange(0);
+  };
+
+  goHomeBtn.onclick = () => {
+    sessionStorage.clear();
+    quizSection.classList.remove("active");
+    nextBtn.classList.remove("active");
+    resultBox.classList.remove("active");
+
+    questionCount = 0;
+    questionNumb = 1;
+    userScore = 0;
+    showQuestions(questionCount);
+    questionCounter(questionNumb);
+    userAnswers.length = 0;
+    correctAnswers.length = 0;
+    onQuestionChange(0);
+  };
+
+  nextBtn.onclick = () => {
+    togglePopup(false);
+    if (questionCount < questions.length - 1) {
+      questionCount++;
+      showQuestions(questionCount);
+      questionNumb++;
+      questionCounter(questionNumb);
+      nextBtn.classList.remove("active");
+      onQuestionChange(questionCount);
+    } else {
+      showResultBox();
+    }
+  };
+
   closeBtn.addEventListener("click", () => togglePopup(false));
-
-  // Fermer la popup en cliquant en dehors d'elle
   window.addEventListener("click", (event) => {
     if (event.target === popupContent) togglePopup(false);
   });
-
-  // Fonction pour ouvrir la popup
-  function openPopup() {
-    togglePopup(true);
-  }
-
-  // Fonction pour mettre à jour l'état de l'interface selon la question
-  function onQuestionChange(index) {
-    const isQuestionTwo = index === 1;
-
-    imgBtn.classList.toggle("active", isQuestionTwo);
-
-    // Réinitialiser les écouteurs d'événements
-    imgBtn.removeEventListener("click", openPopup);
-
-    if (isQuestionTwo) {
-      imgBtn.addEventListener("click", openPopup);
-    } else {
-      togglePopup(false); // Ferme la popup si ce n'est pas la question 2
-    }
-  }
-
-  // Fermer la popup lorsqu'on passe à la question suivante
-  if (nextBtn) {
-    nextBtn.addEventListener("click", () => {
-      togglePopup(false);
-      // Exemple de logique pour changer de question
-      // onQuestionChange(newQuestionIndex);
-    });
-  }
-
-  // Redémarrer le quiz en cliquant sur le bouton "Try Again"
-  if (tryAgainBtn) {
-    tryAgainBtn.addEventListener("click", () => {
-      // Réinitialiser le quiz à la première question ou état initial
-      // Par exemple : onQuestionChange(0); // Pour revenir à la première question
-
-      // Assurez-vous de fermer la popup et de réinitialiser l'état si nécessaire
-      togglePopup(false);
-
-      // Réinitialisation des écouteurs d'événements pour imgBtn
-      imgBtn.removeEventListener("click", openPopup);
-      onQuestionChange(1); // Appel initial pour remettre l'état de la question 2
-    });
-  }
-
-  // Exemple d'appel de la fonction pour une question spécifique
-  onQuestionChange(1); // Appel initial pour la question numéro 2 (à remplacer selon votre logique)
 });
+
+// Fonction pour afficher les questions
+function showQuestions(index) {
+  const questionText = document.querySelector(".question-text");
+  questionText.textContent = `${questions[index].numb}. ${questions[index].question}`;
+
+  let optionTag = questions[index].options
+    .map((option) => `<div class="option"><span>${option}</span></div>`)
+    .join("");
+  optionList.innerHTML = optionTag;
+
+  const options = document.querySelectorAll(".option");
+  options.forEach((option) => {
+    option.setAttribute("onClick", "optionSelected(this)");
+  });
+}
+
 //objet pour correction.html
 const userAnswers = []; // Exemple d'initialisation
 const correctAnswers = questions.map((q) => q.answer);

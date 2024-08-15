@@ -52,6 +52,7 @@ const questions = [
       "C. Double Clic gauche sur l’application, épinglé à la barre des tâches",
       "D. Double Clic droit sur l’application, épinglé à la barre des tâches",
     ],
+    
   },
   {
     numb: 6,
@@ -69,12 +70,12 @@ const questions = [
   {
     numb: 7,
     question: "Comment dupliquer un fichier dans l’explorateur Windows?",
-    answer: "A. Bouton copier et coller",
+    answer: "A. Sélectionner le fichier, bouton copier et coller",
     options: [
-      "A. Bouton copier et coller",
-      "B. Bouton couper et coller",
-      "C. Bouton coller et copier",
-      "D. Bouton coller et couper",
+      "A. Sélectionner le fichier, bouton copier et coller",
+      "B. Sélectionner le fichier, bouton couper et coller",
+      "C. Sélectionner le fichier, bouton coller et copier",
+      "D. Sélectionner le fichier, bouton coller et couper",
     ],
   },
   {

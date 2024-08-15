@@ -21,7 +21,7 @@ let questionNumb = 1;
 let userScore = 0;
 
 // Tableau des indices des questions pour afficher la popup
-const popupQuestionIndices = [1, 2, 3, 4];
+const popupQuestionIndices = [1, 2, 3];
 
 // Fonctions pour gérer l'affichage de la popup
 function togglePopup(show) {

@@ -11,8 +11,6 @@ body {
   color: #fff;
   background: #09001d;
   overflow: hidden;
-  width: 100%;
-  margin: 0;
 }
 
 .header {
@@ -64,7 +62,7 @@ body {
   transition: 0.3s;
 }
 
-@media (min-width: 300px) and (max-width: 768px) {
+@media (min-width: 300px) and (max-width: 1024px) {
   .navbar {
     display: none;
   }
@@ -92,12 +90,12 @@ body {
 .container {
   display: flex;
   height: 100vh;
-  width: 100%;
+  width: 200%;
 }
 
 .home {
   position: relative;
-  left: 0%;
+  left: -50%;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -278,10 +276,9 @@ body {
 }
 
 .quiz-section {
-  position: fixed; /* Fixé pour occuper tout l'écran */
-  height: 100vh;
-  width: 100vw;
-  left: -100vw;
+  position: relative;
+  left: -50%;
+  width: 100%;
   background: #09001d;
   display: flex;
   justify-content: center;
@@ -289,7 +286,6 @@ body {
   transition: 0.8s ease-in-out;
   transition-delay: 0.25s;
   z-index: 100;
-  margin: 0 auto;
 }
 
 .quiz-section.active {
@@ -492,7 +488,7 @@ body {
   right: 0px;
   font-size: 50px;
   font-weight: bold;
-  color: #09001d;
+  color: red;
   cursor: pointer;
   z-index: 1001;
 }
@@ -618,62 +614,4 @@ body {
 .correction a {
   text-decoration: none;
   color: #dd743f;
-}
-
-/* responsive */
-
-@media (min-width: 344px) and (max-width: 768px) {
-  .main {
-    width: auto; /* Garder la taille naturelle de l'image */
-    height: auto; /* Ajuster automatiquement la hauteur pour maintenir le ratio */
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center center;
-  }
-  .container {
-    width: 100%;
-    height: 100vh;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center; /* Centre les éléments */
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .home {
-    left: 0%;
-  }
-
-  .logohome-link {
-    width: 60px;
-    height: 59px;
-    display: inline;
-    margin-right: 10px;
-  }
-
-  .quiz-section {
-    position: fixed;
-    width: 100vw;
-    left: -100vw;
-    height: 100vh;
-    background: #09001d;
-  }
-
-  .logo {
-    width: 50px;
-    height: 49px;
-  }
-
-  .popup-info {
-    width: 80%;
-  }
-
-  .quiz-section .quiz-box {
-    width: 80%;
-  }
-
-  .quiz-section .result-box {
-    width: 80%;
-  }
 }

@@ -636,10 +636,6 @@ body {
     height: 100vh;
     padding: 0;
     margin: 0;
-    display: flex;
-    align-items: center; /* Centre les éléments */
-    justify-content: center;
-    flex-direction: column;
   }
 
   .home {
@@ -659,6 +655,9 @@ body {
     left: -100vw;
     height: 100vh;
     background: #09001d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .logo {
@@ -732,10 +731,7 @@ body {
   }
 }
 
-
-@media (max-width: 360px){
-
- 
+@media (max-width: 360px) {
   .quiz-footer .question-total {
     font-size: 12px;
     font-weight: 400;
@@ -745,6 +741,4 @@ body {
     font-size: 12px;
     font-weight: 400;
   }
-
-
 }

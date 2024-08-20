@@ -48,7 +48,6 @@ body {
   transition: 0.3s;
 }
 
-
 .navbar a:hover,
 .navbar a.active {
   color: #eb6929;
@@ -633,7 +632,7 @@ body {
     color: #333;
     font-weight: 500;
   }
-  
+
   .popup-info .btn-groupe {
     display: flex;
     justify-content: space-between;
@@ -642,7 +641,7 @@ body {
     margin-top: 10px;
     padding: 15px 0 7px;
   }
-  
+
   .popup-info .btn-groupe .info-btn {
     width: 100px;
     height: 40px;
@@ -744,8 +743,6 @@ body {
 }
 
 @media (max-width: 360px) {
-
-
   .home-content h1 {
     font-size: 42px;
     font-weight: 700;
@@ -776,7 +773,6 @@ body {
     cursor: pointer;
     transition: 0.5s;
   }
-
 
   .popup-info .info {
     font-size: 12px;
@@ -838,5 +834,12 @@ body {
 @media (max-width: 1024px) {
   .navbar {
     display: none;
+  }
+
+  .logohome-link {
+    width: 60px;
+    height: 59px;
+    display: inline;
+    margin-right: 10px;
   }
 }

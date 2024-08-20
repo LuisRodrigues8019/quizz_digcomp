@@ -735,6 +735,12 @@ body {
     font-weight: 400;
   }
 
+  .buttons button {
+    height: 40px;
+    font-size: 14px;
+  
+  }
+
   .result-box h2 {
     font-size: 32px;
   }
@@ -747,25 +753,15 @@ body {
     font-size: 16px;
   }
 
-  .buttons button {
-    width: 112px;
-    height: 47px;
-    background: #eb6929;
-    border: 2px solid #dd743f;
-    outline: none;
-    border-radius: 6px;
-    font-size: 14px;
-    color: #fff;
-    font-weight: 600;
-    margin: 0 7px 10px;
-    cursor: pointer;
-    transition: 0.5s;
+  .buttons .goHome-btn, .buttons .correctif-btn {
+    width: 90px;
   }
 
-  .result-box .buttons {
-    display: flex;
- 
+  .buttons .tryAgain-btn {
+    width: 115px;
   }
+
+
 }
 
 @media (max-width: 360px) {
@@ -802,5 +798,20 @@ body {
     border-radius: 6px;
     font-size: 14px;
     font-weight: 400;
+  }
+
+  .buttons button {
+    height: 40px;
+    font-size: 14px;
+    margin: 0 5px 20px;
+  }
+
+
+  .buttons .goHome-btn, .buttons .correctif-btn {
+    width: 80px;
+  }
+
+  .buttons .tryAgain-btn {
+    width: 112px;
   }
 }

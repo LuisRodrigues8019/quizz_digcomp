@@ -37,7 +37,6 @@ body {
   }
 }
 
-
 .navbar a {
   font-size: 18px;
   color: #fff;
@@ -271,7 +270,7 @@ body {
   .res-btn {
     width: 165px;
     height: 50px;
-    background: #ffbd59;
+    background: #c40094;
     border: 2px solid #fff;
     outline: none;
     border-radius: 4px;

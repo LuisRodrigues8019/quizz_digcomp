@@ -55,11 +55,13 @@ h1 {
 .user-answer.correct {
   color: #00a63d;
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .user-answer.incorrect {
   color: #a60045;
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .status-text {
@@ -74,3 +76,43 @@ h1 {
 .status-text.incorrect {
   color: #a60045;
 }
+
+/* responsive */
+
+@media (min-width: 344px) and (max-width: 768px) {
+
+h1 {
+  font-size: 20px;
+  text-align: center;
+}
+
+.correction-item {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    font-size: 14px;
+    margin: 10px 0;
+    padding: 15px;
+    align-items: center;
+  }
+
+.correction-item h3 {
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: #fff;
+  }
+
+  .user-answer.correct {
+    color: #00a63d;
+    font-weight: bold;
+   
+  }
+  
+  .user-answer.incorrect {
+    color: #a60045;
+    font-weight: bold;
+  
+  }
+
+}
+

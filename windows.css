@@ -55,7 +55,7 @@ body {
 
 .main {
   min-height: 100vh;
-  background: url("images/windows.png") no-repeat;
+  background: url("images/windows3.png") no-repeat;
   background-size: cover;
   background-position: center center;
   pointer-events: auto;
@@ -707,6 +707,17 @@ body {
     font-weight: 400;
   }
 
+  .popup-content.active {
+    display: block; /* Afficher la popup lorsqu'elle est active */
+    pointer-events: auto;
+    width: 80%;
+    max-width: 800px;
+  }
+
+  .close-btn {
+    font-size: 40px;
+  }
+
   .img-btn.active {
     width: 70px;
     height: 35px;
@@ -837,9 +848,12 @@ body {
   }
 
   .logohome-link {
-    width: 60px;
-    height: 59px;
     display: inline;
-    margin-right: 10px;
+  }
+
+  .logohome {
+    width: 60px;
+    height: 64px;
+    border-radius: 20px;
   }
 }

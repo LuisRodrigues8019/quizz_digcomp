@@ -321,3 +321,10 @@ body {
   color: #fff;
   text-decoration: none;
 }
+
+@media (max-width: 1024px) {
+  .navbar {
+    display: none;
+  }
+
+}

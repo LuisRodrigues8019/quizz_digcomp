@@ -1,7 +1,7 @@
 const questions = [
   {
     numb: 1,
-    question: "Qu'est-ce que Windows 10?",
+    question: "Qu'est-ce que Windows 10 ?",
     answer: "B. Un sytéme d'explotation",
     options: [
       "A. Un fichier",
@@ -12,14 +12,14 @@ const questions = [
   },
   {
     numb: 2,
-    question: "Quel est le nom de l'icône entourée en rouge dans l'image?",
+    question: "Quel est le nom de l'icône entourée en rouge dans l'image ?",
     answer: "B. Explorateur de Windows",
     options: ["A. Word", "B. Explorateur de Windows", "C. Excel", "D. Windows"],
     image: "images/windows-question2.png",
   },
   {
     numb: 3,
-    question: "Quel est le nom de l'icône entourée en rouge dans l'image?",
+    question: "Quel est le nom de l'icône entourée en rouge dans l'image ?",
     answer: "D. Microsoft Word",
     options: [
       "A. Windows",
@@ -43,7 +43,7 @@ const questions = [
   },
   {
     numb: 5,
-    question: "Comment épingler une application dans la barre des tâches?",
+    question: "Comment épingler une application dans la barre des tâches ?",
     answer:
       "A. Clic droit sur l’application, option épinglé à la barre des tâches",
     options: [
@@ -52,12 +52,11 @@ const questions = [
       "C. Double Clic gauche sur l’application, épinglé à la barre des tâches",
       "D. Double Clic droit sur l’application, épinglé à la barre des tâches",
     ],
-    
   },
   {
     numb: 6,
     question:
-      "Comment supprimer un fichier de façon définitive dans l’explorateur Windows?",
+      "Comment supprimer un fichier de façon définitive dans l’explorateur Windows ?",
     answer:
       "B. Bouton supprimer, option supprimer un fichier de façon définitive",
     options: [
@@ -69,7 +68,7 @@ const questions = [
   },
   {
     numb: 7,
-    question: "Comment dupliquer un fichier dans l’explorateur Windows?",
+    question: "Comment dupliquer un fichier dans l’explorateur Windows ?",
     answer: "A. Sélectionner le fichier, bouton copier et coller",
     options: [
       "A. Sélectionner le fichier, bouton copier et coller",
@@ -80,7 +79,7 @@ const questions = [
   },
   {
     numb: 8,
-    question: "Comment récupère un fichier qui se trouve dans la corbeille?",
+    question: "Comment récupère un fichier qui se trouve dans la corbeille ?",
     answer:
       "B. Dans la corbeille, selectionner l'élement ensuite option restaurer les éléments sélectionnés",
     options: [
@@ -92,7 +91,7 @@ const questions = [
   },
   {
     numb: 9,
-    question: "Parmi les réponses laquelle n’est pas une fichier image?",
+    question: "Parmi les réponses laquelle n’est pas une fichier image ?",
     answer: "D. Image.pdf",
     options: ["A. Image.jpeg", "B. Image.gif", "C. Image.png", "D. Image.pdf"],
   },
@@ -112,7 +111,7 @@ const questions = [
   {
     numb: 11,
     question:
-      "Comment appel-t-on l'endroit où sont stockés les fichiers supprimés?",
+      "Comment appel-t-on l'endroit où sont stockés les fichiers supprimés ?",
     answer: "B. La corbeille",
     options: ["A. La poubelle", "B. La corbeille", "C. Le tri", "D. La boite"],
   },

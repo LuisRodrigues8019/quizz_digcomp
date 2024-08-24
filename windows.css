@@ -56,7 +56,7 @@ body {
 
 .main {
   min-height: 100vh;
-  background: url("images/windows4.png") no-repeat;
+  background: url("images/windows6.png") no-repeat;
   background-size: cover;
   background-position: center center;
   pointer-events: auto;
@@ -357,8 +357,7 @@ body {
 }
 
 .quiz-footer .next-btn.active:hover {
-  background: #dd743f;
-  background-color: #dd743f;
+  background-color: #eb6929;
 }
 /* button image */
 .img-btn {
@@ -367,6 +366,8 @@ body {
   opacity: 0;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
+
+
 
 .img-btn.active {
   display: block; /* Afficher quand active */
@@ -385,6 +386,10 @@ body {
   transform: translateY(0); /* Commence invisible */
   transform: scale(0.95); /* Optionnel: réduction pour effet zoom */
   cursor: pointer;
+}
+
+.img-btn.active:hover {
+background-color: #eb6929;
 }
 
 .img-btn.inactive {
@@ -430,7 +435,7 @@ body {
   right: 0px;
   font-size: 60px;
   font-weight: bold;
-  color: #09001d;
+  color: #eb6929;
   cursor: pointer;
   z-index: 1001;
 }

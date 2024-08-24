@@ -53,7 +53,6 @@ function onQuestionChange(index) {
       imgBtn.classList.add("active");
       setTimeout(() => {
         imgBtn.classList.add("visible"); // Ajouter la classe 'visible' après un léger délai
-        console.log("imgBtn is now visible");
       }, 10); // Petit délai pour permettre l'animation
     }
 

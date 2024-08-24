@@ -359,7 +359,6 @@ body {
 }
 
 .quiz-footer .next-btn.active:hover {
-  background: #eb6929;
   background-color: #eb6929;
 }
 /* button image */
@@ -389,13 +388,13 @@ body {
   cursor: pointer;
 }
 
+
 .img-btn.inactive {
   opacity: 0; /* Transition vers invisible */
   transform: translateY(10px); /* Déplacement vers le bas pour un effet de glissement */
 }
 
 .img-btn.active:hover {
-  background: #eb6929;
   background-color: #eb6929;
 }
 

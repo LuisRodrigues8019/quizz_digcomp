@@ -80,10 +80,10 @@ body {
 
 .home-content h1 {
   position: relative;
-  color: #252839;
+  color: #351578;
   font-size: 68px;
   font-weight: 700;
-  -webkit-text-stroke: 0.3vw #383d52;
+  -webkit-text-stroke: 0.3vw #58389c;
 }
 
 .home-content h1::before {
@@ -94,7 +94,7 @@ body {
   width: 0;
   height: 100%;
   color: #fff;
-  -webkit-text-stroke: 0vw #383d52;
+  -webkit-text-stroke: 0vw #58389c;
   border-right: 2px solid #fff;
   overflow: hidden;
   animation: animate 6s linear infinite;

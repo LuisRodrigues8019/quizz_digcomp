@@ -1,4 +1,3 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
@@ -299,6 +298,17 @@ body {
   transition: 0.3s;
 }
 
+.option {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.option.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .option-list .option:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.1);
@@ -367,8 +377,6 @@ body {
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-
-
 .img-btn.active {
   display: block; /* Afficher quand active */
   pointer-events: auto;
@@ -389,12 +397,14 @@ body {
 }
 
 .img-btn.active:hover {
-background-color: #eb6929;
+  background-color: #eb6929;
 }
 
 .img-btn.inactive {
   opacity: 0; /* Transition vers invisible */
-  transform: translateY(10px); /* Déplacement vers le bas pour un effet de glissement */
+  transform: translateY(
+    10px
+  ); /* Déplacement vers le bas pour un effet de glissement */
 }
 
 /* image popup */

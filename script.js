@@ -65,7 +65,6 @@ function onQuestionChange(index) {
     imgBtn.removeEventListener("click", openPopup);
   }
 }
-
 // Initialisation et gestion des événements
 document.addEventListener("DOMContentLoaded", () => {
   startBtn.onclick = () => {
@@ -177,11 +176,23 @@ function showQuestions(index) {
     questionText.classList.add("active");
 
     const options = document.querySelectorAll(".option");
+
+    // Afficher chaque option avec un délai progressif (incluant la première)
+    options.forEach((option, i) => {
+      // Ajouter un léger délai même pour la première option
+      setTimeout(() => {
+        option.classList.add("show");  // Appliquer la classe 'show' pour déclencher la transition
+      }, i * 100 + 100); // Délai de 0.1s + 0.1s pour la première, puis progressif
+    });
+
+    // Ajouter les gestionnaires d'événements pour les nouvelles options
     options.forEach((option) => {
       option.setAttribute("onClick", "optionSelected(this)");
     });
-  }, 100); // Délai de 0,2 seconde
+
+  }, 100); // Délai de 0.1 seconde avant d'afficher la nouvelle question et les options
 }
+
 
 //objet pour correction.html
 const userAnswers = []; // Exemple d'initialisation
@@ -192,20 +203,29 @@ function optionSelected(answer) {
   let correctAnswer = questions[questionCount].answer;
   let allOptions = optionList.children.length;
 
-  if (userAnswer == correctAnswer) {
+  if (userAnswer === correctAnswer) {
     answer.classList.add("correct");
     userScore += 1;
     headerScore();
   } else {
     answer.classList.add("incorrect");
 
-    //if answer incorrect, auto selected correct answer
+    // Afficher la bonne réponse sans que les autres options disparaissent
     for (let i = 0; i < allOptions; i++) {
-      if (optionList.children[i].textContent == correctAnswer) {
-        optionList.children[i].setAttribute("class", "option correct");
+      if (optionList.children[i].textContent === correctAnswer) {
+        optionList.children[i].classList.add("correct");
+        optionList.children[i].classList.add("show"); // S'assurer que la bonne réponse reste visible
       }
     }
+
+    // Désactiver toutes les options après la sélection
+    for (let i = 0; i < allOptions; i++) {
+      optionList.children[i].classList.add("disabled");
+    }
+
+    nextBtn.classList.add("active");
   }
+
   // Stockage de la réponse de l'utilisateur correction.html
   userAnswers.push(userAnswer);
   correctAnswers.push(correctAnswer);

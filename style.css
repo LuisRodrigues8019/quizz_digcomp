@@ -60,7 +60,18 @@ body {
   min-height: 100vh;
   background: url("images/back3.png") no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+}
+
+@media (min-width: 344px) and (max-width: 768px) {
+  .main {
+    width: auto; /* Garder la taille naturelle de l'image */
+    height: auto; /* Ajuster automatiquement la hauteur pour maintenir le ratio */
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center center;
+  }
+
 }
 
 .home {

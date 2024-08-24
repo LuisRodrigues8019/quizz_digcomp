@@ -39,24 +39,35 @@ function onQuestionChange(index) {
   const question = questions[index];
 
   if (showPopup && question.image) {
+    // Vérifier que l'élément imgBtn existe
+    if (!imgBtn) {
+      return;
+    }
+
     // Mettre à jour l'image dans la popup
     const popupImg = document.querySelector(".popup-content img");
-    popupImg.src = question.image;
+    if (popupImg) {
+      popupImg.src = question.image;
 
-    imgBtn.classList.add("active");
-    setTimeout(() => {
-      imgBtn.classList.add("visible");
-    }, 10);
+      // Ajouter la classe 'active' pour afficher le bouton image
+      imgBtn.classList.add("active");
+      setTimeout(() => {
+        imgBtn.classList.add("visible"); // Ajouter la classe 'visible' après un léger délai
+        console.log("imgBtn is now visible");
+      }, 10); // Petit délai pour permettre l'animation
+    }
+
+    // S'assurer que l'événement de clic pour ouvrir la popup est bien ajouté
     imgBtn.addEventListener("click", openPopup);
   } else {
+    // Si la question ne nécessite pas de popup, cacher le bouton image immédiatement
     imgBtn.classList.remove("visible");
-    setTimeout(() => {
-      imgBtn.classList.remove("active");
-    }, 300);
+    imgBtn.classList.remove("active");
+
+    // Retirer l'événement de clic pour éviter les comportements inattendus
     imgBtn.removeEventListener("click", openPopup);
   }
 }
-
 // Initialisation et gestion des événements
 document.addEventListener("DOMContentLoaded", () => {
   startBtn.onclick = () => {
@@ -114,7 +125,6 @@ document.addEventListener("DOMContentLoaded", () => {
     onQuestionChange(0);
   };
 
-
   nextBtn.onclick = () => {
     // Ajouter transition pour cacher l'image
     imgBtn.classList.remove("active");
@@ -149,8 +159,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (event.target === popupContent) togglePopup(false);
   });
 });
-
-
 
 function showQuestions(index) {
   const questionText = document.querySelector(".question-text");

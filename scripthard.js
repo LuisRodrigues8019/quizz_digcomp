@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         showResultBox();
       }
-    }, 50); // Délai global pour changer la question
+    }, 200); // Délai global pour changer la question
   };
 
   closeBtn.addEventListener("click", () => togglePopup(false));

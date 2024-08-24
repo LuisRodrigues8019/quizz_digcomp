@@ -58,7 +58,7 @@ body {
 
 .main {
   min-height: 100vh;
-  background: url("images/back.png") no-repeat;
+  background: url("images/back2.png") no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -79,10 +79,39 @@ body {
 }
 
 .home-content h1 {
+  position: relative;
+  color: #252839;
   font-size: 68px;
   font-weight: 700;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  -webkit-text-stroke: 0.3vw #383d52;
 }
+
+.home-content h1::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: #fff;
+  -webkit-text-stroke: 0vw #383d52;
+  border-right: 2px solid #fff;
+  overflow: hidden;
+  animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+  0%,
+  10%,
+  100% {
+    width: 0;
+  }
+  70%,
+  90% {
+    width: 100%;
+  }
+}
+
 @media (min-width: 345px) and (max-width: 768px) {
   .home-content h1 {
     font-size: 48px;
@@ -326,5 +355,4 @@ body {
   .navbar {
     display: none;
   }
-
 }

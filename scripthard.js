@@ -114,18 +114,34 @@ document.addEventListener("DOMContentLoaded", () => {
     onQuestionChange(0);
   };
 
+
   nextBtn.onclick = () => {
-    togglePopup(false);
-    if (questionCount < questions.length - 1) {
-      questionCount++;
-      showQuestions(questionCount);
-      questionNumb++;
-      questionCounter(questionNumb);
-      nextBtn.classList.remove("active");
-      onQuestionChange(questionCount);
-    } else {
-      showResultBox();
-    }
+    // Ajouter transition pour cacher l'image
+    imgBtn.classList.remove("active");
+    imgBtn.classList.add("inactive");
+
+    setTimeout(() => {
+      togglePopup(false);
+
+      if (questionCount < questions.length - 1) {
+        questionCount++;
+
+        // Changer la question après 0.2 seconde
+        setTimeout(() => {
+          showQuestions(questionCount);
+          questionNumb++;
+          questionCounter(questionNumb);
+          nextBtn.classList.remove("active");
+
+          // Ajouter la transition pour afficher le bouton image avec un léger délai
+          imgBtn.classList.remove("inactive");
+          imgBtn.classList.add("active");
+          onQuestionChange(questionCount);
+        }, 200); // Délai de 0,2 seconde pour la transition du bouton image
+      } else {
+        showResultBox();
+      }
+    }, 50); // Délai global pour changer la question
   };
 
   closeBtn.addEventListener("click", () => togglePopup(false));
@@ -134,20 +150,31 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Fonction pour afficher les questions
+
+
 function showQuestions(index) {
   const questionText = document.querySelector(".question-text");
-  questionText.textContent = `${questions[index].numb}. ${questions[index].question}`;
 
-  let optionTag = questions[index].options
-    .map((option) => `<div class="option"><span>${option}</span></div>`)
-    .join("");
-  optionList.innerHTML = optionTag;
+  // Masquer la question actuelle avec une transition
+  questionText.classList.remove("active");
 
-  const options = document.querySelectorAll(".option");
-  options.forEach((option) => {
-    option.setAttribute("onClick", "optionSelected(this)");
-  });
+  // Changer la question
+  setTimeout(() => {
+    questionText.textContent = `${questions[index].numb}. ${questions[index].question}`;
+
+    let optionTag = questions[index].options
+      .map((option) => `<div class="option"><span>${option}</span></div>`)
+      .join("");
+    optionList.innerHTML = optionTag;
+
+    // Ajouter la transition pour afficher la nouvelle question
+    questionText.classList.add("active");
+
+    const options = document.querySelectorAll(".option");
+    options.forEach((option) => {
+      option.setAttribute("onClick", "optionSelected(this)");
+    });
+  }, 100); // Délai de 0,2 seconde
 }
 
 //objet pour correction.html

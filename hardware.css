@@ -55,7 +55,7 @@ body {
 
 .main {
   min-height: 100vh;
-  background: url("images/hardware.png") no-repeat;
+  background: url("images/webmail.png") no-repeat;
   background-size: cover;
   background-position: center center;
   pointer-events: auto;
@@ -275,6 +275,18 @@ body {
   font-weight: 600;
 }
 
+.question-text {
+  opacity: 0;
+  transform: translateY(10px); /* Ajoute un léger déplacement vertical */
+  transition: opacity 0.2s ease, transform 0.2s ease; /* Combine l'opacité et la transformation */
+}
+
+.question-text.active {
+  opacity: 1;
+  transform: translateY(0); /* Ramène à la position originale */
+}
+
+
 .option-list .option {
   width: 100%;
   padding: 12px;
@@ -286,6 +298,8 @@ body {
   cursor: pointer;
   transition: 0.3s;
 }
+
+
 
 .option-list .option:hover {
   background: rgba(255, 255, 255, 0.1);
@@ -345,14 +359,15 @@ body {
 }
 
 .quiz-footer .next-btn.active:hover {
-  background: #dd743f;
-  background-color: #dd743f;
+  background: #eb6929;
+  background-color: #eb6929;
 }
 /* button image */
 .img-btn {
   display: none; /* Masquer par défaut */
   pointer-events: none;
-  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .img-btn.active {
@@ -368,15 +383,22 @@ body {
   border-radius: 6px;
   font-size: 16px;
   font-weight: 600;
-  opacity: 0; /* Commence invisible */
+  opacity: 1;
+  transform: translateY(0); /* Commence invisible */
   transform: scale(0.95); /* Optionnel: réduction pour effet zoom */
   cursor: pointer;
 }
 
-.img-btn.active.visible {
-  opacity: 1;
-  transform: scale(1); /* Retour à la taille normale pour l'animation de zoom */
+.img-btn.inactive {
+  opacity: 0; /* Transition vers invisible */
+  transform: translateY(10px); /* Déplacement vers le bas pour un effet de glissement */
 }
+
+.img-btn.active:hover {
+  background: #eb6929;
+  background-color: #eb6929;
+}
+
 
 /* image popup */
 
@@ -416,7 +438,7 @@ body {
   right: 0px;
   font-size: 60px;
   font-weight: bold;
-  color: #09001d;
+  color:#eb6929;
   cursor: pointer;
   z-index: 1001;
 }

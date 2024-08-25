@@ -107,7 +107,7 @@ const questions = [
     answer: "A. Le Disque SDD est plus rapide",
     options: [
       "A. Le Disque SDD est plus rapide",
-      "B Le Disque SDD est plus lent",
+      "B. Le Disque SDD est plus lent",
       "C. Le Disque SDD est plus fragile",
       "D. Le Disque SDD est moins durable",
     ],
@@ -189,7 +189,7 @@ const questions = [
   {
     numb: 20,
     question:
-      "Sur quel composant les données de l'ordinateur sont-elles stockées de manière permanente?",
+      "Sur quel composant les données de l'ordinateur sont-elles stockées de manière permanente ?",
     answer: "B. Disque dur",
     options: [
       "A. Mémoire ram",

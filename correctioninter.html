@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Correction Quiz Hardware</title>
+    <link rel="stylesheet" href="correction.css" />
+  </head>
+  <body>
+    <div class="correction-container">
+      <h1>Correction Quiz Hardware</h1>
+      <div id="correction-content"></div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const correctionContent = document.getElementById("correction-content");
+
+        // Récupérer les réponses de l'utilisateur et les réponses correctes depuis le Local Storage
+        const userAnswers =
+          JSON.parse(sessionStorage.getItem("userAnswers")) || [];
+        const correctAnswers =
+          JSON.parse(sessionStorage.getItem("correctAnswers")) || [];
+        const questions = JSON.parse(sessionStorage.getItem("questions")) || [];
+
+        // Assurer que nous avons toutes les données nécessaires
+        if (userAnswers.length && correctAnswers.length && questions.length) {
+          questions.forEach((question, index) => {
+            const correctionItem = document.createElement("div");
+            correctionItem.classList.add("correction-item");
+
+            // Titre de la question
+            const questionTitle = document.createElement("h3");
+            questionTitle.textContent =
+              question.numb + ". " + question.question;
+            correctionItem.appendChild(questionTitle);
+
+            // Réponse de l'utilisateur
+            const userAnswer = document.createElement("p");
+            userAnswer.textContent = `Votre réponse : ${userAnswers[index]}`;
+            const isCorrect = userAnswers[index] === correctAnswers[index];
+            userAnswer.classList.add(
+              "user-answer",
+              isCorrect ? "correct" : "incorrect"
+            );
+            correctionItem.appendChild(userAnswer);
+
+            // Indication de correction
+            const statusText = document.createElement("span");
+            statusText.textContent = isCorrect
+              ? "(Réponse correcte)"
+              : "(Réponse incorrecte)";
+            statusText.classList.add(
+              "status-text",
+              isCorrect ? "correct" : "incorrect"
+            );
+            userAnswer.appendChild(statusText);
+
+            // Réponse correcte
+            const correctAnswer = document.createElement("p");
+            correctAnswer.textContent = `Réponse correcte : ${correctAnswers[index]}`;
+            correctAnswer.classList.add("correct-answer");
+            correctionItem.appendChild(correctAnswer);
+
+            // Ajouter l'élément de correction au conteneur
+            correctionContent.appendChild(correctionItem);
+          });
+          sessionStorage.clear();
+        } else {
+          correctionContent.textContent =
+            "Aucune donnée de correction disponible.";
+        }
+      });
+    </script>
+  </body>
+</html>

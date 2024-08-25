@@ -181,7 +181,7 @@ function showQuestions(index) {
     options.forEach((option, i) => {
       // Ajouter un léger délai même pour la première option
       setTimeout(() => {
-        option.classList.add("show");  // Appliquer la classe 'show' pour déclencher la transition
+        option.classList.add("show"); // Appliquer la classe 'show' pour déclencher la transition
       }, i * 100 + 100); // Délai de 0.1s + 0.1s pour la première, puis progressif
     });
 
@@ -189,10 +189,8 @@ function showQuestions(index) {
     options.forEach((option) => {
       option.setAttribute("onClick", "optionSelected(this)");
     });
-
   }, 100); // Délai de 0.1 seconde avant d'afficher la nouvelle question et les options
 }
-
 
 //objet pour correction.html
 const userAnswers = []; // Exemple d'initialisation

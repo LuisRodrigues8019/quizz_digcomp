@@ -120,6 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
     userAnswers.length = 0;
     correctAnswers.length = 0;
     onQuestionChange(0);
+    
   };
 
   nextBtn.onclick = () => {
@@ -154,6 +155,11 @@ document.addEventListener("DOMContentLoaded", () => {
   closeBtn.addEventListener("click", () => togglePopup(false));
   window.addEventListener("click", (event) => {
     if (event.target === popupContent) togglePopup(false);
+  });
+  
+  window.addEventListener("popstate", (event) => {
+    // Efface sessionStorage lorsque l'utilisateur clique sur "Retour" du navigateur
+    sessionStorage.clear();
   });
 });
 

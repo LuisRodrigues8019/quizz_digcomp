@@ -157,6 +157,11 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("click", (event) => {
     if (event.target === popupContent) togglePopup(false);
   });
+  
+  window.addEventListener("popstate", (event) => {
+    // Efface sessionStorage lorsque l'utilisateur clique sur "Retour" du navigateur
+    sessionStorage.clear();
+  });
 });
 
 function showQuestions(index) {

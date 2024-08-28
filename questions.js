@@ -2,10 +2,10 @@ const questions = [
   {
     numb: 1,
     question: "Qu'est-ce que Windows 10 ?",
-    answer: "B. Un sytéme d'explotation",
+    answer: "B. Un systéme d'exploitation",
     options: [
       "A. Un fichier",
-      "B. Un sytéme d'explotation",
+      "B. Un systéme d'exploitation",
       "C. Un logiciel de traitement de texte",
       "D. Un logiciel tableur",
     ],
@@ -68,7 +68,7 @@ const questions = [
   },
   {
     numb: 7,
-    question: "Comment dupliquer un fichier dans l’explorateur Windows ?",
+    question: "Comment dupliquer un fichier dans l’explorateur de Windows ?",
     answer: "A. Sélectionner le fichier, bouton copier et coller",
     options: [
       "A. Sélectionner le fichier, bouton copier et coller",
@@ -79,12 +79,12 @@ const questions = [
   },
   {
     numb: 8,
-    question: "Comment récupère un fichier qui se trouve dans la corbeille ?",
+    question: "Comment récupérer un fichier qui se trouve dans la corbeille ?",
     answer:
-      "B. Dans la corbeille, selectionner l'élement ensuite option restaurer les éléments sélectionnés",
+      "B. Dans la corbeille, sélectionner l'élément ensuite option restaurer les éléments sélectionnés",
     options: [
       "A. Dans la corbeille, restaurer tous les éléments",
-      "B. Dans la corbeille, selectionner l'élement ensuite option restaurer les éléments sélectionnés",
+      "B. Dans la corbeille, sélectionner l'élément ensuite option restaurer les éléments sélectionnés",
       "C. Dans la corbeille, vider la corbeille",
       "D. Dans la corbeille, récupère un élément",
     ],
@@ -98,7 +98,7 @@ const questions = [
   {
     numb: 10,
     question:
-      "Comment s'appelle le bouton situé à gauche de la barre de tâche?",
+      "Comment s'appelle le bouton situé à gauche de la barre de tâche ?",
     answer: "D. Le menu démarrer",
     options: [
       "A. Le bouton marche",
@@ -111,7 +111,7 @@ const questions = [
   {
     numb: 11,
     question:
-      "Comment appel-t-on l'endroit où sont stockés les fichiers supprimés ?",
+      "Comment appelle-t-on l'endroit où sont stockés les fichiers supprimés ?",
     answer: "B. La corbeille",
     options: ["A. La poubelle", "B. La corbeille", "C. Le tri", "D. La boite"],
   },
@@ -130,7 +130,7 @@ const questions = [
 
   {
     numb: 13,
-    question: "Comment afficher-t-on un menu contextuel ?",
+    question: "Comment affiche-t-on un menu contextuel ?",
     answer: "C. Clic droit",
     options: [
       "A. Clic gauche",

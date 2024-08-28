@@ -441,15 +441,34 @@ body {
 
 .close-btn {
   position: absolute;
-  top: -20px;
-  right: 0px;
-  font-size: 60px;
-  font-weight: bold;
-  color: #dd743f;
+  top: 25px;
+  right: -20px;
+  transform: translate(-50%, -50%);
+  width: 45px;
+  height: 45px;
+  background-color: #000; /* Couleur initiale du carré */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  z-index: 1001;
-  
+  transition: background-color 0.3s ease, transform 0.5s ease;
+  border-radius: 5px; /* Coins légèrement arrondis */
 }
+
+.close-btn i {
+  color: #fff;
+  font-size: 30px;
+  transition: transform 0.5s ease; /* Animation de rotation de la croix */
+}
+
+.close-btn:hover {
+  background-color: #dd743f; /* Couleur de fond lors du survol */
+}
+
+.close-btn:hover i {
+  transform: rotate(360deg); /* Rotation à 360 degrés lors du survol */
+}
+
 
 .quiz-section .result-box {
   position: absolute;
@@ -745,7 +764,16 @@ body {
   }
 
   .close-btn {
-    font-size: 40px;
+    position: absolute;
+    top: 18px;
+    right: -12px;
+    width: 30px;
+    height: 30px;
+   
+  }
+
+  .close-btn i {
+    font-size: 20px;
   }
 
   .img-btn.active {
@@ -854,6 +882,19 @@ body {
     border-radius: 6px;
     font-size: 14px;
     font-weight: 400;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: -12px;
+    width: 25px;
+    height: 25px;
+   
+  }
+
+  .close-btn i {
+    font-size: 15px;
   }
 
   .buttons button {

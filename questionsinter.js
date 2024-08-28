@@ -36,7 +36,7 @@ const questions = [
     numb: 4,
     question: "Que signifie le “S” de HTTPS ?",
     answer: "B. Sécurisé",
-    options: ["A. Server", "B. Sécurisé", "C. Sytéme", "D. Server"],
+    options: ["A. Server", "B. Sécurisé", "C. Systéme", "D. Server"],
   },
   {
     numb: 5,
@@ -192,9 +192,9 @@ const questions = [
   },
   {
     numb: 18,
-    question: "Quel logo est représenté par un avatar dans l'image?",
-    answer: "A. Logo 1",
-    options: ["A. Logo 1", "B. Logo 2", "C. Logo 3", "D. Logo 4"],
+    question: "Quel logo est représenté par un avatar dans l'image ?",
+    answer: "A. Option 1",
+    options: ["A. Option 1", "B. Option 2", "C. Option 3", "D. Option 4"],
     image: "images/avatar.png",
   },
   {
@@ -242,8 +242,39 @@ const questions = [
   {
     numb: 23,
     question:
-      "Quelle application web est utilisée pour le partage de photos et vidéos ?",
+      "Quelle application web est dédié au partage de photos et vidéos ?",
     answer: "C. Instagram",
     options: ["A. Waze", "B. Deezer", "C. Instagram", "D. Shazam"],
+  },
+
+  {
+    numb: 24,
+    question:
+      "Dans l’image, quelle application n’est pas un navigateur internet ?",
+    answer: "C. Windows 10",
+    options: [
+      "A. Google Chrome",
+      "B. Microsoft Edge",
+      "C. Windows 10",
+      "D. Firefox",
+    ],
+    image: "images/navigateur.png",
+  },
+
+  {
+    numb: 25,
+    question: "Dans l’image, quelle zone permet de saisir une recherche ?",
+    answer: "C. Zone 1",
+    options: ["A. Zone 2", "B. Zone 3", "C. Zone 1", "D. Zone 4"],
+    image: "images/rechercheinternet.png",
+  },
+
+  {
+    numb: 26,
+    question:
+      "Dans l'image, quelle application ne fait pas partie d'un service de Cloud ?",
+    answer: "A. Wikipédia",
+    options: ["A. Wikipédia", "B. Onedrive", "C. Google Drive", "D. Dropbox"],
+    image: "images/cloud.png",
   },
 ];

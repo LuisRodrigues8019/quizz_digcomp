@@ -23,6 +23,10 @@ let userScore = 0;
 // Tableau des indices des questions pour afficher la popup
 const popupQuestionIndices = [1, 2, 3];
 
+// Déclaration globale des réponses correctes et des réponses utilisateur
+let correctAnswers = [];
+const userAnswers = [];
+
 // Fonctions pour gérer l'affichage de la popup
 function togglePopup(show) {
   popupContent.classList.toggle("active", show);
@@ -65,8 +69,12 @@ function onQuestionChange(index) {
     imgBtn.removeEventListener("click", openPopup);
   }
 }
+
 // Initialisation et gestion des événements
 document.addEventListener("DOMContentLoaded", () => {
+  // Initialisation des réponses correctes ici après le chargement des questions
+  correctAnswers = questions.map((q) => q.answer);
+
   startBtn.onclick = () => {
     popupInfo.classList.add("active");
     main.classList.add("active");
@@ -91,6 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   tryAgainBtn.onclick = () => {
     sessionStorage.clear();
+    correctAnswers = questions.map((q) => q.answer); // Réinitialiser les réponses correctes
     quizBox.classList.add("active");
     nextBtn.classList.remove("active");
     resultBox.classList.remove("active");
@@ -98,16 +107,18 @@ document.addEventListener("DOMContentLoaded", () => {
     questionCount = 0;
     questionNumb = 1;
     userScore = 0;
+
     showQuestions(questionCount);
     questionCounter(questionNumb);
     headerScore();
-    userAnswers.length = 0;
-    correctAnswers.length = 0;
+    userAnswers.length = 0; // Réinitialiser les réponses utilisateur
+
     onQuestionChange(0);
   };
 
   goHomeBtn.onclick = () => {
     sessionStorage.clear();
+    correctAnswers = questions.map((q) => q.answer); // Réinitialiser les réponses correctes
     quizSection.classList.remove("active");
     nextBtn.classList.remove("active");
     resultBox.classList.remove("active");
@@ -117,8 +128,8 @@ document.addEventListener("DOMContentLoaded", () => {
     userScore = 0;
     showQuestions(questionCount);
     questionCounter(questionNumb);
-    userAnswers.length = 0;
-    correctAnswers.length = 0;
+    userAnswers.length = 0; // Réinitialiser les réponses utilisateur
+
     onQuestionChange(0);
   };
 
@@ -192,10 +203,6 @@ function showQuestions(index) {
   }, 100); // Délai de 0.1 seconde avant d'afficher la nouvelle question et les options
 }
 
-//objet pour correction.html
-const userAnswers = []; // Exemple d'initialisation
-const correctAnswers = questions.map((q) => q.answer);
-
 function optionSelected(answer) {
   let userAnswer = answer.textContent;
   let correctAnswer = questions[questionCount].answer;
@@ -224,11 +231,10 @@ function optionSelected(answer) {
     nextBtn.classList.add("active");
   }
 
-  // Stockage de la réponse de l'utilisateur correction.html
+  // Stockage de la réponse de l'utilisateur pour correction.html
   userAnswers.push(userAnswer);
-  correctAnswers.push(correctAnswer);
 
-  //if user has selected, disable all options
+  // Désactiver toutes les options après la sélection
   for (let i = 0; i < allOptions; i++) {
     optionList.children[i].classList.add("disabled");
   }
@@ -272,8 +278,8 @@ function showResultBox() {
       clearInterval(progress);
     }
   }, speed);
-  // Stockage de la réponse de l'utilisateur correction.html
 }
+
 // lien vers correction.html
 document
   .getElementById("correction-link")
@@ -287,5 +293,7 @@ document
     sessionStorage.setItem("questions", JSON.stringify(questions));
 
     // Ouvrir la page de correction dans un nouvel onglet
-    window.open("correction.html", "_blank");
+    setTimeout(() => {
+      window.open("correction.html", "_blank");
+    }, 100);
   });

@@ -58,10 +58,10 @@ const questions = [
     question:
       "Comment supprimer un fichier de façon définitive dans l’explorateur Windows ?",
     answer:
-      "B. Bouton supprimer, option supprimer un fichier de façon définitive",
+      "B. Bouton supprimer, option supprimer de façon définitive",
     options: [
       "A. Bouton supprimé",
-      "B. Bouton supprimer, option supprimer un fichier de façon définitive",
+      "B. Bouton supprimer, option supprimer de façon définitive",
       "C. Bouton supprimer option placer dans la corbeille",
       "D. Bouton supprimé dans la corbeille",
     ],

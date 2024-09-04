@@ -54,9 +54,9 @@ const questions = [
     question: "Quel est le site officiel du gouvernement belge ?",
     answer: "D. https://www.belgium.be",
     options: [
-      "A. https://www.belgium.gouvernement.be ",
-      "B. https://www.gourvernement.be ",
-      "C. https://www.gov.belgium.be ",
+      "A. https://www.belgium.gouvernement.be",
+      "B. https://www.gourvernement.be",
+      "C. https://www.gov.belgium.be",
       "D. https://www.belgium.be",
     ],
   },

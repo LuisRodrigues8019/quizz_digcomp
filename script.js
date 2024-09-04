@@ -291,9 +291,11 @@ document
     sessionStorage.setItem("userAnswers", JSON.stringify(userAnswers));
     sessionStorage.setItem("correctAnswers", JSON.stringify(correctAnswers));
     sessionStorage.setItem("questions", JSON.stringify(questions));
+    sessionStorage.setItem("userScore", userScore);
+    sessionStorage.setItem("totalQuestions", questions.length);
 
     // Ouvrir la page de correction dans un nouvel onglet
     setTimeout(() => {
-      window.open("correction.html", "_blank");
+      window.open("correctionwindows.html", "_blank");
     }, 100);
   });

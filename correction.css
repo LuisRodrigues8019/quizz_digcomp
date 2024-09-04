@@ -77,6 +77,17 @@ h1 {
   color: #a60045;
 }
 
+.scoreText {
+  font-size: 26px;
+  font-weight: 600;
+  margin-top: 20px;
+  color: #dd743f;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* responsive */
 
 @media (min-width: 344px) and (max-width: 768px) {
@@ -112,6 +123,10 @@ h1 {
     color: #dd743f;
     font-weight: bold;
   
+  }
+
+  .scoreText {
+    font-size: 20px;
   }
 
 }

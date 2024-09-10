@@ -1,10 +1,11 @@
 const questions = [
+  
   {
     numb: 1,
     question: "Quel est le nom de l'application visible sur l'image ?",
     answer: "B. Snapchat",
     options: ["A. Waze", "B. Snapchat", "C. Facebook", "D. Instagram"],
-    image: "",
+    image: "images/snapchat.png",
   },
   {
     numb: 2,
@@ -35,6 +36,7 @@ const questions = [
       "Quelle application dans l'image ne propose pas de service de musique en streaming ?",
     answer: "D. Youtube",
     options: ["A. Spotify", "B.Deezer", "C. Apple Music", "D. Youtube"],
+    image: "images/musicstream.png",
   },
   {
     numb: 5,
@@ -86,13 +88,13 @@ const questions = [
   },
   {
     numb: 10,
-    question: "Quelle est la société mère d'Instagram ?",
+    question: "Quelle est la société mère <br> d'Instagram ?",
     answer: "D. Facebook",
     options: ["A. Amazon", "B. Apple", "C. Instagram", "D. Facebook"],
   },
   {
     numb: 11,
-    question: "Pinterest dispose-t-il d'une messagerie ?",
+    question: "Pinterest dispose-t-il d'une <br> messagerie ?",
     answer: "C. Oui",
     options: [
       "A. Non",
@@ -119,6 +121,7 @@ const questions = [
     question: "Quel est le nom de l'application visible sur l'image ?",
     answer: "B. Pinterest",
     options: ["A. Flickr", "B. Pinterest", "C. Waze", "D. Instagram"],
+    image: "images/pinterest.png",
   },
 
   {
@@ -147,37 +150,37 @@ const questions = [
   },
   {
     numb: 16,
-    question: "Quel est le nom du logo visible dans l'image ?",
+    question: "Quel est le nom du logo que l'on peut voir sur l'image ?",
     answer: "D. Google",
     options: ["A. Apple", "B. Microsoft", "C. Amazon", "D. Google"],
-    image: "",
+    image: "images/google.png",
   },
   {
     numb: 17,
-    question: "Quel est le nom du logo visible dans l'image ?",
+    question: "Quel est le nom du logo que l'on peut voir sur l'image ?",
     answer: "C. Amazon",
-    options: ["A. Google", "B. Facebook", "C. Amazon", "D. Tomtom"],
-    image: "",
+    options: ["A. Google", "B. Facebook", "C. Amazon", "D. TomTom"],
+    image: "images/amazon.png",
   },
   {
     numb: 18,
-    question: "Quel est le nom du logo visible dans l'image ?",
+    question: "Quel est le nom du logo que l'on peut voir sur l'image ?",
     answer: "A. Facebook",
     options: ["A. Facebook", "Snapchat", "C. Twiter", "D. Deezer"],
-    image: "",
+    image: "images/facebook.png",
   },
   {
     numb: 19,
-    question: "Quel est le nom du logo visble dans l'image ?",
+    question: "Quel est le nom du logo que l'on peut voir sur l'image ?",
     answer: "B. Apple",
-    options: ["A. Apple", "B. Microsoft", " Amazon", "D. Spotify"],
-    image: "",
+    options: ["A. DropBox", "B. Apple", " Amazon", "D. Spotify"],
+    image: "images/apple.png",
   },
   {
     numb: 20,
-    question: "Quel est le nom du logo visible dans l'image ?",
+    question: "Quel est le nom du logo que l'on peut voir sur l'image ?",
     answer: "C. Microsoft",
-    options: ["A. Google", "B. Instagram", "C. Messenger", "D. Youtube"],
-    image: "",
+    options: ["A. Google", "B. Instagram", "C. Microsoft", "D. Youtube"],
+    image: "images/microsoft.png",
   },
 ];

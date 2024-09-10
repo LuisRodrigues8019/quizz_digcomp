@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quizz Digcomp</title>
     <link rel="stylesheet" href="reseaux.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   </head>
   <body>
     <main class="main">
@@ -22,18 +23,103 @@
           <img class="logohome" src="images/logohome3.png" />
         </a>
       </header>
-      </header>
-
-      <section class="home">
-        <div class="home-content">
-          <h1>Réseaux Sociaux</h1>
-          <p>
-            Quiz sur les réseaux sociaux. <br />
-            Cliquez sur le bouton démarrer.
-          </p>
-          <button class="start-btn">Démarrer</button>
-        </div>
-      </section>
+      <div class="container">
+        <section class="quiz-section">
+          <div class="quiz-box">
+            <h1>Internet</h1>
+            <div class="quiz-header">
+              <span>Quiz Internet</span>
+              <span class="header-score">Score: 0 / 23</span>
+            </div>
+            <h2 class="question-text"></h2>
+            <div class="option-list">
+              <!-- <div class="option">
+                <span>A. Une suite office</span>
+              </div>
+              <div class="option">
+                <span>B. Un sytéme d'explotation</span>
+              </div>
+              <div class="option">
+                <span>C. Un logiciel de traitement de texte</span>
+              </div>
+              <div class="option">
+                <span>D. Un logiciel tableur</span>
+              </div>-->
+            </div>
+            <div class="quiz-footer">
+              <span class="question-total"> 1 sur 23 </span>
+              <button class="img-btn">Image</button>
+              <button class="next-btn">Suivant</button>
+            </div>
+          </div>
+          <div id="popup" class="popup">
+            <div class="popup-content">
+              <span class="close-btn"><i class="fas fa-times"></i></span>
+              <img src="" alt="Image popup" />
+            </div>
+          </div>
+          <div class="result-box">
+            <h2>Résultat</h2>
+            <div class="percentage-container">
+              <div class="circular-progress">
+                <span class="progress-value">0%</span>
+              </div>
+              <span class="score-text">Votre score 0 sur 23</span>
+              <h2 class="correction">
+                <a href="#" id="correction-link">Voir la Correction</a>
+              </h2>
+            </div>
+            <div class="buttons">
+              <button class="tryAgain-btn">Recommencer</button>
+              <button class="goHome-btn">Accueil</button>
+              <button class="correctif-btn">
+                <a href="pdf/quiz-reseaux-sociaux.pdf" target="_blank" class="link-pdf"
+                  >Réponses</a
+                >
+              </button>
+            </div>
+          </div>
+        </section>
+        <section class="home">
+          <div class="home-content">
+            <h1>Réseaux Sociaux</h1>
+            <p>
+              Quiz sur les réseaux sociaux. <br />
+              Cliquez sur le bouton démarrer.
+            </p>
+            <button class="start-btn">Démarrer</button>
+          </div>
+        </section>
+      </div>
     </main>
+    <div class="popup-info">
+      <h2>Consignes</h2>
+      <span class="info">1. Quiz Réseaux Sociaux</span>
+      <span class="info"
+        >2. Activez le mode plein écran avant de débuter le quiz !</span
+      >
+      <span class="info"
+        >3. Répondre à la question permet de passer à la suivante.</span
+      >
+      <span class="info"
+        >4. Un bouton permettra d'afficher l'image de certaines
+        questions.</span
+      >
+      <span class="info"
+        >5. Après avoir terminé le quiz, vous avez la possibilité de voir votre
+        résultat, d'accéder à la correction, de réessayer le quiz et de voir les
+        réponses.</span
+      >
+      <span class="info"
+        >6. Les réponses du quiz sont disponibles en fichier PDF que vous pouvez
+        télécharger.</span
+      >
+      <div class="btn-groupe">
+        <button class="info-btn exit-btn">Quitter Quiz</button>
+        <a href="#" class="info-btn continue-btn">continuer</a>
+      </div>
+    </div>
+    <script src="questionreseaux.js"></script>
+    <script src="scriptres.js"></script>
   </body>
 </html>

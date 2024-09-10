@@ -9,12 +9,14 @@
   <body>
     <div class="correction-container">
       <h1>Correction Quiz Internet</h1>
+      <span class="scoreText">Votre score 0 sur 14 </span>
       <div id="correction-content"></div>
     </div>
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const correctionContent = document.getElementById("correction-content");
+        const scoreText = document.querySelector(".scoreText");
 
         // Récupérer les réponses de l'utilisateur et les réponses correctes depuis le Local Storage
         const userAnswers =
@@ -22,6 +24,10 @@
         const correctAnswers =
           JSON.parse(sessionStorage.getItem("correctAnswers")) || [];
         const questions = JSON.parse(sessionStorage.getItem("questions")) || [];
+        const userScore = sessionStorage.getItem("userScore") || 0;
+        const totalQuestions = sessionStorage.getItem("totalQuestions") || 0;
+
+        scoreText.textContent = `Votre score : ${userScore} sur ${totalQuestions}`;
 
         // Assurer que nous avons toutes les données nécessaires
         if (userAnswers.length && correctAnswers.length && questions.length) {

@@ -9,6 +9,7 @@ const questions = [
       "C. Un logiciel de traitement de texte",
       "D. Un logiciel tableur",
     ],
+
   },
   {
     numb: 2,

@@ -28,7 +28,7 @@ h1 {
   background: linear-gradient(45deg, transparent, #dd743f, transparent);
   border-radius: 6px;
   color: #fff;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .correction-item {
@@ -80,7 +80,7 @@ h1 {
 .scoreText {
   font-size: 26px;
   font-weight: 600;
-  margin-top: 20px;
+  margin-top: 10px;
   color: #dd743f;
   text-align: center;
   display: flex;
@@ -126,7 +126,7 @@ h1 {
   }
 
   .scoreText {
-    font-size: 20px;
+    font-size: 18px;
   }
 
 }

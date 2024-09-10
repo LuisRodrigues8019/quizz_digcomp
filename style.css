@@ -209,11 +209,11 @@ body {
 .win-btn {
   width: 100px;
   height: 45px;
-  background: #004aad;
+  background: #2f48ae;
   border: 2px solid #fff;
   outline: none;
   border-radius: 6px;
-  box-shadow: 0 0 10px #004aad;
+  box-shadow: 0 0 10px #2f48ae;
   font-size: 18px;
   color: #fff;
   letter-spacing: 1px;
@@ -226,7 +226,7 @@ body {
   .win-btn {
     width: 88px;
     height: 50px;
-    background: #004aad;
+    background: #2f48ae;
     border: 2px solid #fff;
     outline: none;
     border-radius: 4px;
@@ -238,11 +238,11 @@ body {
 .hard-btn {
   width: 110px;
   height: 45px;
-  background: #ff3131;
+  background: #2279d8;
   border: 2px solid #fff;
   outline: none;
   border-radius: 6px;
-  box-shadow: 0 0 10px #004aad;
+  box-shadow: 0 0 10px #2279d8;
   font-size: 18px;
   color: #fff;
   letter-spacing: 1px;
@@ -254,7 +254,7 @@ body {
   .hard-btn {
     width: 94px;
     height: 50px;
-    background: #ff3131;
+    background: #2279d8;
     border: 2px solid #fff;
     outline: none;
     border-radius: 4px;
@@ -266,11 +266,11 @@ body {
 .internet-btn {
   width: 100px;
   height: 45px;
-  background: #3b1386;
+  background: #10707b;
   border: 2px solid #fff;
   outline: none;
   border-radius: 6px;
-  box-shadow: 0 0 10px #004aad;
+  box-shadow: 0 0 10px #10707b;
   font-size: 18px;
   color: #fff;
   letter-spacing: 1px;
@@ -283,7 +283,7 @@ body {
   .internet-btn {
     width: 85px;
     height: 50px;
-    background: #3b1386;
+    background: #10707b;
     border: 2px solid #fff;
     outline: none;
     border-radius: 4px;
@@ -295,11 +295,11 @@ body {
 .res-btn {
   width: 190px;
   height: 45px;
-  background: #c40094;
+  background: #aa30cf;
   border: 2px solid #fff;
   outline: none;
   border-radius: 6px;
-  box-shadow: 0 0 10px #004aad;
+  box-shadow: 0 0 10px #aa30cf;
   font-size: 18px;
   color: #fff;
   letter-spacing: 1px;
@@ -323,11 +323,11 @@ body {
 .mail-btn {
   width: 105px;
   height: 45px;
-  background: #006837;
+  background: #055a45;
   border: 2px solid #fff;
   outline: none;
   border-radius: 6px;
-  box-shadow: 0 0 10px #004aad;
+  box-shadow: 0 0 10px #158e6f;
   font-size: 18px;
   color: #fff;
   letter-spacing: 1px;
@@ -339,7 +339,7 @@ body {
   .mail-btn {
     width: 89px;
     height: 50px;
-    background: #006837;
+    background: #087459;
     border: 2px solid #fff;
     outline: none;
     border-radius: 4px;

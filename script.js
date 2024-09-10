@@ -107,6 +107,8 @@ document.addEventListener("DOMContentLoaded", () => {
     questionCount = 0;
     questionNumb = 1;
     userScore = 0;
+    imgBtn.classList.remove("active", "visible", "inactive");
+    imgBtn.removeEventListener("click", openPopup);
 
     showQuestions(questionCount);
     questionCounter(questionNumb);
@@ -126,6 +128,9 @@ document.addEventListener("DOMContentLoaded", () => {
     questionCount = 0;
     questionNumb = 1;
     userScore = 0;
+    imgBtn.classList.remove("active", "visible", "inactive");
+    imgBtn.removeEventListener("click", openPopup);
+
     showQuestions(questionCount);
     questionCounter(questionNumb);
     userAnswers.length = 0; // Réinitialiser les réponses utilisateur
@@ -143,23 +148,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (questionCount < questions.length - 1) {
         questionCount++;
+        showQuestions(questionCount);
+        questionNumb++;
+        questionCounter(questionNumb);
+        nextBtn.classList.remove("active");
 
-        // Changer la question après 0.2 seconde
-        setTimeout(() => {
-          showQuestions(questionCount);
-          questionNumb++;
-          questionCounter(questionNumb);
-          nextBtn.classList.remove("active");
-
-          // Ajouter la transition pour afficher le bouton image avec un léger délai
-          imgBtn.classList.remove("inactive");
-          imgBtn.classList.add("active");
-          onQuestionChange(questionCount);
-        }, 200); // Délai de 0,2 seconde pour la transition du bouton image
+        // Ajouter la transition pour afficher le bouton image avec un léger délai
+        imgBtn.classList.remove("inactive");
+        imgBtn.classList.add("active");
+        onQuestionChange(questionCount);
       } else {
         showResultBox();
       }
-    }, 200); // Délai global pour changer la question
+    }, 200); // Utiliser un seul délai global pour la transition complète
   };
 
   closeBtn.addEventListener("click", () => togglePopup(false));
@@ -200,7 +201,7 @@ function showQuestions(index) {
     options.forEach((option) => {
       option.setAttribute("onClick", "optionSelected(this)");
     });
-  }, 100); // Délai de 0.1 seconde avant d'afficher la nouvelle question et les options
+  }, 200); // Délai de 0.1 seconde avant d'afficher la nouvelle question et les options
 }
 
 function optionSelected(answer) {
@@ -208,6 +209,7 @@ function optionSelected(answer) {
   let correctAnswer = questions[questionCount].answer;
   let allOptions = optionList.children.length;
 
+  // le reste du code...
   if (userAnswer === correctAnswer) {
     answer.classList.add("correct");
     userScore += 1;

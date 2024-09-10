@@ -36,7 +36,7 @@ const questions = [
     numb: 4,
     question: "Que signifie le “S” de HTTPS ?",
     answer: "B. Sécurisé",
-    options: ["A. Server", "B. Sécurisé", "C. Systéme", "D. Server"],
+    options: ["A. Service", "B. Sécurisé", "C. Systéme", "D. Server"],
   },
   {
     numb: 5,
@@ -73,13 +73,13 @@ const questions = [
   },
   {
     numb: 8,
-    question: " C’est quoi le protocole FTP ?",
+    question: "C’est quoi le protocole FTP ?",
     answer: "B. Protocole de transfert de fichiers",
     options: [
       "A. Un service de streaming vidéo",
       "B. Protocole de transfert de fichiers",
       "C. Un navigateur web",
-      "D. Un service de streaming vidéo",
+      "D. Un protocole qui crypte les messages",
     ],
   },
   {
@@ -149,9 +149,9 @@ const questions = [
     answer: "A. Un logiciel malveillant déguisé en programme utile",
     options: [
       "A. Un logiciel malveillant déguisé en programme utile",
-      "B. Un wallack",
-      "C. Un logiciel de traitement de texte",
-      "D. Un firewall",
+      "B. un logiciel antivirus",
+      "C. un appareil qui accélère la connexion internet",
+      "D. un pare-feu de sécurité",
     ],
   },
 
@@ -161,7 +161,7 @@ const questions = [
     answer: "C. Un canular ou une fausse information diffusée en ligne",
     options: [
       "A. Un nouveau modèle d'ordinateur",
-      "B. Un type de piratage informatique",
+      "B. une technologie de communication sans fi",
       "C. Un canular ou une fausse information diffusée en ligne",
       "D. Un type de piratage informatique",
     ],
@@ -218,7 +218,7 @@ const questions = [
   {
     numb: 21,
     question:
-      "Parmi les technologies suivantes, lesquelles permettent de se connecter à internet ?",
+      "Quelle technologie permet de se connecter à Internet ?",
     answer: "B. 3G 4G Hotspot wifi",
     options: [
       "A. Le voip",
@@ -242,7 +242,7 @@ const questions = [
   {
     numb: 23,
     question:
-      "Quelle application web est dédié au partage de photos et vidéos ?",
+      "Quelle application web est dédiée au partage de photos et vidéos ?",
     answer: "C. Instagram",
     options: ["A. Waze", "B. Deezer", "C. Instagram", "D. Shazam"],
   },
@@ -272,7 +272,7 @@ const questions = [
   {
     numb: 26,
     question:
-      "Dans l'image, quelle application ne fait pas partie d'un service de Cloud ?",
+      "Dans l'image, quelle application n’est pas un service de Cloud ?",
     answer: "A. Wikipédia",
     options: ["A. Wikipédia", "B. Onedrive", "C. Google Drive", "D. Dropbox"],
     image: "images/cloud.png",

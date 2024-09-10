@@ -21,9 +21,7 @@ let questionNumb = 1;
 let userScore = 0;
 
 // Tableau des indices des questions pour afficher la popup
-const popupQuestionIndices = [
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18,
-];
+const popupQuestionIndices = [0, 3, 12, 15, 16, 17, 18, 19];
 
 // Déclaration globale des réponses correctes et des réponses utilisateur
 let correctAnswers = [];
@@ -109,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
     questionCount = 0;
     questionNumb = 1;
     userScore = 0;
-    
+
     imgBtn.classList.remove("active", "visible", "inactive");
     imgBtn.removeEventListener("click", openPopup);
     showQuestions(questionCount);
@@ -180,6 +178,7 @@ function showQuestions(index) {
   // Changer la question
   setTimeout(() => {
     questionText.textContent = `${questions[index].numb}. ${questions[index].question}`;
+    questionText.innerHTML = `${questions[index].numb}. ${questions[index].question}`;
 
     let optionTag = questions[index].options
       .map((option) => `<div class="option"><span>${option}</span></div>`)
@@ -296,8 +295,9 @@ document
     sessionStorage.setItem("questions", JSON.stringify(questions));
     sessionStorage.setItem("userScore", userScore);
     sessionStorage.setItem("totalQuestions", questions.length);
+
     // Ouvrir la page de correction dans un nouvel onglet
     setTimeout(() => {
-      window.open("correctionhardware.html", "_blank");
+      window.open("correctionreseaux.html", "_blank");
     }, 100);
   });

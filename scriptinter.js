@@ -108,6 +108,8 @@ document.addEventListener("DOMContentLoaded", () => {
     questionNumb = 1;
     userScore = 0;
 
+    imgBtn.classList.remove("active", "visible", "inactive");
+    imgBtn.removeEventListener("click", openPopup);
     showQuestions(questionCount);
     questionCounter(questionNumb);
     headerScore();
@@ -126,6 +128,9 @@ document.addEventListener("DOMContentLoaded", () => {
     questionCount = 0;
     questionNumb = 1;
     userScore = 0;
+    
+    imgBtn.classList.remove("active", "visible", "inactive");
+    imgBtn.removeEventListener("click", openPopup);
     showQuestions(questionCount);
     questionCounter(questionNumb);
     userAnswers.length = 0; // Réinitialiser les réponses utilisateur
@@ -143,23 +148,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (questionCount < questions.length - 1) {
         questionCount++;
+        showQuestions(questionCount);
+        questionNumb++;
+        questionCounter(questionNumb);
+        nextBtn.classList.remove("active");
 
-        // Changer la question après 0.2 seconde
-        setTimeout(() => {
-          showQuestions(questionCount);
-          questionNumb++;
-          questionCounter(questionNumb);
-          nextBtn.classList.remove("active");
-
-          // Ajouter la transition pour afficher le bouton image avec un léger délai
-          imgBtn.classList.remove("inactive");
-          imgBtn.classList.add("active");
-          onQuestionChange(questionCount);
-        }, 200); // Délai de 0,2 seconde pour la transition du bouton image
+        // Ajouter la transition pour afficher le bouton image avec un léger délai
+        imgBtn.classList.remove("inactive");
+        imgBtn.classList.add("active");
+        onQuestionChange(questionCount);
       } else {
         showResultBox();
       }
-    }, 200); // Délai global pour changer la question
+    }, 200); // Utiliser un seul délai global pour la transition complète
   };
 
   closeBtn.addEventListener("click", () => togglePopup(false));
@@ -200,7 +201,7 @@ function showQuestions(index) {
     options.forEach((option) => {
       option.setAttribute("onClick", "optionSelected(this)");
     });
-  }, 100); // Délai de 0.1 seconde avant d'afficher la nouvelle question et les options
+  }, 200); // Délai de 0.1 seconde avant d'afficher la nouvelle question et les options
 }
 
 function optionSelected(answer) {
@@ -291,9 +292,10 @@ document
     sessionStorage.setItem("userAnswers", JSON.stringify(userAnswers));
     sessionStorage.setItem("correctAnswers", JSON.stringify(correctAnswers));
     sessionStorage.setItem("questions", JSON.stringify(questions));
-
+    sessionStorage.setItem("userScore", userScore);
+    sessionStorage.setItem("totalQuestions", questions.length);
     // Ouvrir la page de correction dans un nouvel onglet
     setTimeout(() => {
-      window.open("correctioninter.html", "_blank");
+      window.open("correctioninternet.html", "_blank");
     }, 100);
   });

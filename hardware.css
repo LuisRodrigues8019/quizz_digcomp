@@ -623,7 +623,7 @@ body {
   }
 
   .home-content h1 {
-    font-size: 48px;
+    font-size: 42px;
     font-weight: 700;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
@@ -813,7 +813,7 @@ body {
 
 @media (max-width: 360px) {
   .home-content h1 {
-    font-size: 42px;
+    font-size: 38px;
     font-weight: 700;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     padding: 0;

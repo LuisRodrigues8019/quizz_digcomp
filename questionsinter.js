@@ -161,7 +161,7 @@ const questions = [
     answer: "C. Un canular ou une fausse information diffusée en ligne",
     options: [
       "A. Un nouveau modèle d'ordinateur",
-      "B. une technologie de communication sans fi",
+      "B. une technologie de communication sans fil",
       "C. Un canular ou une fausse information diffusée en ligne",
       "D. Un type de piratage informatique",
     ],

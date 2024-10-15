@@ -52,7 +52,7 @@ body {
 
 .main {
   min-height: 100vh;
-  background: url("images/back3.png") no-repeat;
+  background: url("images/back4.png") no-repeat;
   background-size: cover;
   background-position: center center;
 }
@@ -66,7 +66,7 @@ body {
 }
 
 .home-content {
-  max-width: 750px;
+  max-width: 500px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -76,7 +76,6 @@ body {
   font-size: 68px;
   font-weight: 700;
 }
-
 
 @media (min-width: 300px) and (max-width: 344px) {
   .home-content h1 {
@@ -107,8 +106,6 @@ body {
   }
 }
 
-
-
 .button-container {
   display: flex;
   justify-content: center;
@@ -121,16 +118,14 @@ body {
   margin: 5px;
 }
 
-
-
 .cs-btn {
   width: 180px;
   height: 45px;
-  background: #2f48ae;
+  background: #e18044;
   border: 2px solid #fff;
   outline: none;
   border-radius: 6px;
-  box-shadow: 0 0 10px #2f48ae;
+  box-shadow: 0 0 10px #e18044;
   font-size: 18px;
   color: #fff;
   letter-spacing: 1px;
@@ -143,7 +138,63 @@ body {
   .cs-btn {
     width: 140px;
     height: 50px;
-    background: #2f48ae;
+    background: #e18044;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
+
+.win-btn {
+  width: 110px;
+  height: 45px;
+  background: #0b5cc8;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #0b5cc8;
+  font-size: 18px;
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.5s;
+}
+@media (min-width: 339px) and (max-width: 768px) {
+  .win-btn {
+    width: 94px;
+    height: 50px;
+    background: #0b5cc8;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
+
+.gf-btn {
+  width: 180px;
+  height: 45px;
+  background: #d4ac0d;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #d4ac0d;
+  font-size: 18px;
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.5s;
+}
+@media (min-width: 339px) and (max-width: 768px) {
+  .gf-btn {
+    width: 94px;
+    height: 50px;
+    background:#d4ac0d;
     border: 2px solid #fff;
     outline: none;
     border-radius: 4px;
@@ -155,11 +206,11 @@ body {
 .hard-btn {
   width: 110px;
   height: 45px;
-  background: #2279d8;
+  background: #c83535;
   border: 2px solid #fff;
   outline: none;
   border-radius: 6px;
-  box-shadow: 0 0 10px #2279d8;
+  box-shadow: 0 0 10px #c83535;
   font-size: 18px;
   color: #fff;
   letter-spacing: 1px;
@@ -171,7 +222,7 @@ body {
   .hard-btn {
     width: 94px;
     height: 50px;
-    background: #2279d8;
+    background: #c83535;
     border: 2px solid #fff;
     outline: none;
     border-radius: 4px;
@@ -183,24 +234,25 @@ body {
 .word-btn {
   width: 100px;
   height: 45px;
-  background: #10707b;
+  background: #053a82;
   border: 2px solid #fff;
   outline: none;
   border-radius: 6px;
-  box-shadow: 0 0 10px #10707b;
+  box-shadow: 0 0 10px #053a82;
   font-size: 18px;
   color: #fff;
   letter-spacing: 1px;
   font-weight: 600;
   cursor: pointer;
   transition: 0.5s;
+  margin-top: 10px;
 }
 
 @media (min-width: 339px) and (max-width: 768px) {
   .word-btn {
     width: 85px;
     height: 50px;
-    background: #10707b;
+    background: #053a82;
     border: 2px solid #fff;
     outline: none;
     border-radius: 4px;
@@ -223,6 +275,7 @@ body {
   font-weight: 600;
   cursor: pointer;
   transition: 0.5s;
+  margin-top: 10px;
 }
 @media (min-width: 339px) and (max-width: 768px) {
   .inter-btn {
@@ -237,26 +290,56 @@ body {
   }
 }
 
-.res-btn {
-  width: 200px;
+.cloud-btn {
+  width: 100px;
   height: 45px;
-  background: #055a45;
+  background: #390999;
   border: 2px solid #fff;
   outline: none;
   border-radius: 6px;
-  box-shadow: 0 0 10px #158e6f;
+  box-shadow: 0 0 10px #390999;
   font-size: 18px;
   color: #fff;
   letter-spacing: 1px;
   font-weight: 600;
   cursor: pointer;
+  margin-top: 10px;
+}
+
+@media (min-width: 339px) and (max-width: 768px) {
+  .cloud-btn {
+    width: 170px;
+    height: 50px;
+    background: #390999;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
+
+.res-btn {
+  width: 200px;
+  height: 45px;
+  background: #089451;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #089451;
+  font-size: 18px;
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 @media (min-width: 339px) and (max-width: 768px) {
   .res-btn {
     width: 170px;
     height: 50px;
-    background: #087459;
+    background: #089451;
     border: 2px solid #fff;
     outline: none;
     border-radius: 4px;
@@ -269,7 +352,10 @@ body {
 .hard-btn:hover,
 .inter-btn:hover,
 .res-btn:hover,
-.word-btn:hover {
+.word-btn:hover,
+.cloud-btn:hover,
+.win-btn:hover,
+.gf-btn:hover {
   background: #09001d;
   box-shadow: none;
 }
@@ -283,6 +369,19 @@ body {
 /* responsive */
 
 @media (min-width: 300px) and (max-width: 768px) {
+  .main {
+    width: auto; /* Garder la taille naturelle de l'image */
+    height: auto; /* Ajuster automatiquement la hauteur pour maintenir le ratio */
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center center;
+  }
+  .container {
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+  }
 
   .logo {
     width: 50px;
@@ -296,18 +395,7 @@ body {
     margin-right: 10px;
   }
 
-  .navbar {
-    display: none;
-  }
-
-  .main {
-    width: auto; /* Garder la taille naturelle de l'image */
-    height: auto; /* Ajuster automatiquement la hauteur pour maintenir le ratio */
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center center;
-  }
-
+ 
   .home-content h1 {
     font-size: 48px;
     font-weight: 700;
@@ -324,32 +412,47 @@ body {
   }
 }
 
+@media (max-width: 1024px) {
+  .navbar {
+    display: none;
+  }
+}
+
+/* responsive boutons */
+@media (min-width: 339px) and (max-width: 768px) {
+  .home-content {
+    flex-direction: column;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .button-container button {
+    max-width: 90%;
+  }
+  .bottom-buttons {
+    margin-top: 18px;
+  }
+
+  .bottom-group {
+    gap: 15px;
+  }
+}
 
 @media (max-width: 1024px) {
-    .navbar {
-      display: none;
-    }
+  .navbar {
+    display: none;
   }
 
-  /* responsive boutons */
-@media (min-width: 339px) and (max-width: 768px) {
-    .home-content {
-      flex-direction: column;
-    }
-  
-    .button-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .button-container button {
-      max-width: 90%;
-    }
-    .bottom-buttons {
-      margin-top: 18px;
-    }
-  
-    .bottom-group {
-      gap: 15px;
-    }
+  .logohome-link {
+    display: inline;
   }
+
+  .logohome {
+    width: 60px;
+    height: 64px;
+    border-radius: 20px;
+  }
+}

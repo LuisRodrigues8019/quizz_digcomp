@@ -9,6 +9,10 @@
 
 body {
   color: #fff;
+  background: #09001d;
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
 }
 
 .header {

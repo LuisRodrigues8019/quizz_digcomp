@@ -9,6 +9,10 @@
 
 body {
   color: #fff;
+  background: #09001d;
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
 }
 
 .header {
@@ -193,6 +197,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
   .button-container button {
     max-width: 90%;
@@ -348,6 +353,38 @@ body {
   }
 }
 
+.syl-btn {
+  width: 105px;
+  height: 45px;
+  background: #e49868;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #158e6f;
+  font-size: 18px;
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: 600;
+  cursor: pointer;
+  display: none;
+}
+
+@media (min-width: 339px) and (max-width: 768px) {
+  .syl-btn {
+    width: 120px;
+    height: 50px;
+    background: #e67e3c;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+    display: inline;
+    text-decoration: none;
+    margin-top: 40px;
+  }
+}
+
 .win-btn:hover,
 .hard-btn:hover,
 .internet-btn:hover,
@@ -358,7 +395,8 @@ body {
 }
 
 .top-buttons a,
-.bottom-buttons a {
+.bottom-buttons a,
+.syl-buttons a {
   color: #fff;
   text-decoration: none;
 }

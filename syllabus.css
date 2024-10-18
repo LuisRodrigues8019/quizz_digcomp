@@ -9,6 +9,10 @@
 
 body {
   color: #fff;
+  background: #09001d;
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
 }
 
 .header {
@@ -136,7 +140,7 @@ body {
 
 @media (min-width: 339px) and (max-width: 768px) {
   .cs-btn {
-    width: 140px;
+    width: 150px;
     height: 50px;
     background: #e18044;
     border: 2px solid #fff;
@@ -164,7 +168,7 @@ body {
 }
 @media (min-width: 339px) and (max-width: 768px) {
   .win-btn {
-    width: 94px;
+    width: 92px;
     height: 50px;
     background: #0b5cc8;
     border: 2px solid #fff;
@@ -192,9 +196,9 @@ body {
 }
 @media (min-width: 339px) and (max-width: 768px) {
   .gf-btn {
-    width: 94px;
+    width: 160px;
     height: 50px;
-    background:#d4ac0d;
+    background: #d4ac0d;
     border: 2px solid #fff;
     outline: none;
     border-radius: 4px;
@@ -220,7 +224,7 @@ body {
 }
 @media (min-width: 339px) and (max-width: 768px) {
   .hard-btn {
-    width: 94px;
+    width: 100px;
     height: 50px;
     background: #c83535;
     border: 2px solid #fff;
@@ -250,7 +254,7 @@ body {
 
 @media (min-width: 339px) and (max-width: 768px) {
   .word-btn {
-    width: 85px;
+    width: 90px;
     height: 50px;
     background: #053a82;
     border: 2px solid #fff;
@@ -279,7 +283,7 @@ body {
 }
 @media (min-width: 339px) and (max-width: 768px) {
   .inter-btn {
-    width: 100px;
+    width: 90px;
     height: 50px;
     background: #c40094;
     border: 2px solid #fff;
@@ -308,7 +312,7 @@ body {
 
 @media (min-width: 339px) and (max-width: 768px) {
   .cloud-btn {
-    width: 170px;
+    width: 90px;
     height: 50px;
     background: #390999;
     border: 2px solid #fff;
@@ -337,7 +341,7 @@ body {
 
 @media (min-width: 339px) and (max-width: 768px) {
   .res-btn {
-    width: 170px;
+    width: 190px;
     height: 50px;
     background: #089451;
     border: 2px solid #fff;
@@ -395,7 +399,6 @@ body {
     margin-right: 10px;
   }
 
- 
   .home-content h1 {
     font-size: 48px;
     font-weight: 700;
@@ -428,17 +431,27 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+  }
+
+  .bottom-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
   }
   .button-container button {
     max-width: 90%;
   }
+ 
   .bottom-buttons {
-    margin-top: 18px;
+    margin-top: 10px;
   }
 
   .bottom-group {
     gap: 15px;
   }
+
+  
 }
 
 @media (max-width: 1024px) {
@@ -456,3 +469,4 @@ body {
     border-radius: 20px;
   }
 }
+

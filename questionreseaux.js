@@ -173,7 +173,7 @@ const questions = [
     numb: 19,
     question: "Quel est le nom du logo que l'on peut voir sur l'image ?",
     answer: "B. Apple",
-    options: ["A. DropBox", "B. Apple", " Amazon", "D. Spotify"],
+    options: ["A. DropBox", "B. Apple", "C. Amazon", "D. Spotify"],
     image: "images/apple.png",
   },
   {

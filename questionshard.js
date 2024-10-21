@@ -104,12 +104,12 @@ const questions = [
     numb: 11,
     question:
       "Quelle est la différence entre un disque SSD et un disque dur HDD ?",
-    answer: "A. Le Disque SDD est plus rapide",
+    answer: "A. Le Disque SSD est plus rapide",
     options: [
-      "A. Le Disque SDD est plus rapide",
-      "B. Le Disque SDD est plus lent",
-      "C. Le Disque SDD est plus fragile",
-      "D. Le Disque SDD est moins durable",
+      "A. Le Disque SSD est plus rapide",
+      "B. Le Disque SSD est plus lent",
+      "C. Le Disque SSD est plus fragile",
+      "D. Le Disque SSD est moins durable",
     ],
   },
 

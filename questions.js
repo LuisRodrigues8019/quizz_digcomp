@@ -92,9 +92,10 @@ const questions = [
   },
   {
     numb: 9,
-    question: "Parmi les réponses laquelle n’est pas une fichier image ?",
-    answer: "D. Image.pdf",
-    options: ["A. Image.jpeg", "B. Image.gif", "C. Image.png", "D. Image.pdf"],
+    question: "Dans l'image, quel fichier ne correspond pas à une image ?",
+    answer: "D. Images.pdf",
+    options: ["A. Images.jpg", "B. Images.gif", "C. Images.png", "D. Images.pdf"],
+    image: "images/windows-questions9.png",
   },
   {
     numb: 10,

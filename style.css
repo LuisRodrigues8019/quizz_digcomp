@@ -369,7 +369,7 @@ body {
   display: none;
 }
 
-@media (min-width: 339px) and (max-width: 768px) {
+@media (min-width: 339px) and (max-width: 1024px) {
   .syl-btn {
     width: 120px;
     height: 50px;

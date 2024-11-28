@@ -14,8 +14,8 @@ const questions = [
   {
     numb: 2,
     question: "Quel est le nom de l'icône entourée en rouge dans l'image ?",
-    answer: "B. Explorateur de Windows",
-    options: ["A. Word", "B. Explorateur de Windows", "C. Excel", "D. Windows"],
+    answer: "B. Explorateur de Fichiers",
+    options: ["A. Word", "B. Explorateur de Fichiers", "C. Excel", "D. Windows"],
     image: "images/windows-question2.png",
   },
   {
@@ -153,4 +153,17 @@ const questions = [
       "D. Double clic droit",
     ],
   },
+  {
+    numb: 15,
+    question: "Quel affichage choisir dans l'explorateur de fichiers pour voir la date, le type et la taille des fichiers ?",
+    answer: "D. Détails",
+    options: [
+      "A. Liste",
+      "B. Contenu",
+      "C. Mosaiques",
+      "D. Détails",
+    ],
+    image: "images/windows-questions15.png",
+  },
+  
 ];

@@ -217,8 +217,7 @@ const questions = [
   },
   {
     numb: 21,
-    question:
-      "Quelle technologie permet de se connecter à Internet ?",
+    question: "Quelle technologie permet de se connecter à Internet ?",
     answer: "B. 3G 4G Hotspot wifi",
     options: [
       "A. Le voip",
@@ -276,5 +275,31 @@ const questions = [
     answer: "A. Wikipédia",
     options: ["A. Wikipédia", "B. Onedrive", "C. Google Drive", "D. Dropbox"],
     image: "images/cloud.png",
+  },
+
+  {
+    numb: 27,
+    question:
+      "Comment accélérer le téléchargement lent d’un film sur mon ordinateur ?",
+    answer: "B. Passer à la fibre",
+    options: [
+      "A. Utilisez deux câbles Ethernet",
+      "B. Passer à la fibre",
+      "C. Téléchargez la nuit",
+      "D. Installez un antivirus pour accélérer",
+    ],
+  },
+
+  {
+    numb: 28,
+    question:
+      "Quel principe garantit l'absence de discrimination des informations sur Internet, peu importe leur source, destination ou contenu ?",
+    answer: "D. La neutralité du net",
+    options: [
+      "A. La centralisation des données",
+      "B. La priorisation des contenus populaires",
+      "C. Le filtrage par les fournisseurs d'accès",
+      "D. La neutralité du net",
+    ],
   },
 ];

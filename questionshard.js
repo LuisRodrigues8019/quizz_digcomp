@@ -198,4 +198,17 @@ const questions = [
       "D. Processeur",
     ],
   },
+
+  {
+    numb: 21,
+    question:
+      "Quel est le rôle de la carte mère ?",
+    answer: "C. Relier tous les composants entre eux",
+    options: [
+      "A. Augmenter la vitesse de connexion Internet",
+      "B. Stocker les fichiers et applications",
+      "C. Relier tous les composants entre eux",
+      "D. Fournir de l'alimentation électrique à l'écran",
+    ],
+  },
 ];

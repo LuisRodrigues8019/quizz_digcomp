@@ -428,6 +428,12 @@ body {
   color: #09001d;
 }
 
+@media (min-width: 339px) and (max-width: 768px) {
+  .icons {
+margin-top: 20px;
+  }
+}
+
 *:focus,
 *:active {
   outline: none !important;

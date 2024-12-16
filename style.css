@@ -426,11 +426,14 @@ body {
   bottom: 0;
   width: 100%;
   color: #09001d;
+  
 }
 
 @media (min-width: 339px) and (max-width: 768px) {
   .icons {
-margin-top: 20px;
+padding-top: 0;
+padding-bottom: 0;
+
   }
 }
 

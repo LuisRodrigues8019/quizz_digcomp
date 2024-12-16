@@ -293,7 +293,7 @@ const questions = [
   {
     numb: 28,
     question:
-      "Quel principe garantit l'absence de discrimination des informations sur Internet, peu importe leur source, destination ou contenu ?",
+      "Quel principe garantit l'absence de discrimination des informations sur Internet peu importe leur source, destination ou contenu ?",
     answer: "D. La neutralité du net",
     options: [
       "A. La centralisation des données",

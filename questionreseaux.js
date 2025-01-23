@@ -1,5 +1,4 @@
-const questions = [
-  
+let questions = [
   {
     numb: 1,
     question: "Quel est le nom de l'application visible sur l'image ?",
@@ -88,13 +87,13 @@ const questions = [
   },
   {
     numb: 10,
-    question: "Quelle est la société mère <br> d'Instagram ?",
+    question: "Quelle est la société mère d'Instagram?",
     answer: "D. Facebook",
     options: ["A. Amazon", "B. Apple", "C. Instagram", "D. Facebook"],
   },
   {
     numb: 11,
-    question: "Pinterest dispose-t-il d'une <br> messagerie ?",
+    question: "Pinterest dispose-t-il d'une messagerie?",
     answer: "C. Oui",
     options: [
       "A. Non",
@@ -166,7 +165,7 @@ const questions = [
     numb: 18,
     question: "Quel est le nom du logo que l'on peut voir sur l'image ?",
     answer: "A. Facebook",
-    options: ["A. Facebook", "Snapchat", "C. Twiter", "D. Deezer"],
+    options: ["A. Facebook", "B. Snapchat", "C. Twiter", "D. Deezer"],
     image: "images/facebook.png",
   },
   {

@@ -20,8 +20,70 @@ let questionCount = 0;
 let questionNumb = 1;
 let userScore = 0;
 
+questions = questions.map((q, index) => ({
+  ...q,
+  id: index + 1, // Identifiant unique basé sur l'ordre initial
+}));
+
+// Copie de sauvegarde des questions initiales
+const originalQuestions = [...questions];
+
+questions.forEach((q, index) => {
+  if (q.image && typeof q.image !== "string") {
+  }
+});
+
+function resetQuizState() {
+  // Réinitialiser les questions dans leur ordre initial
+  questions = [...originalQuestions];
+
+  // Recalculer les indices des popups
+  popupQuestionIndices = questions
+    .map((q, index) => (q.image ? index : -1))
+    .filter((index) => index !== -1);
+
+  // Réinitialiser les réponses correctes
+  correctAnswers = questions.map((q) => q.answer);
+
+  // Réinitialiser les réponses utilisateur
+  userAnswers.length = 0;
+
+  // Réinitialiser les variables de contrôle du quiz
+  questionCount = 0;
+  questionNumb = 1;
+  userScore = 0;
+}
+
+// Fonction pour mélanger et inverser les questions
+function shuffleAndReverseQuestions() {
+  if (shouldShuffle) {
+    const shuffledQuestions = [...originalQuestions]
+      .map((q, index) => ({ ...q, originalIndex: index }))
+      .sort(() => Math.random() - 0.5)
+      .reverse();
+
+    questions = shuffledQuestions;
+
+    recalculatePopupIndices(); // Recalcul des indices des popups
+  } else {
+    resetQuestionsToOriginalOrder();
+  }
+}
+
+function recalculatePopupIndices() {
+  popupQuestionIndices = questions
+    .map((q, index) => (q.image ? index : -1)) // Garder uniquement les questions avec des images
+    .filter((index) => index !== -1); // Filtrer les indices invalides
+}
+
+// Fonction pour réinitialiser l'ordre des questions
+function resetQuestionsToOriginalOrder() {
+  questions = [...originalQuestions];
+  recalculatePopupIndices(); // Recalcul des indices des popups après réinitialisation
+}
+
 // Tableau des indices des questions pour afficher la popup
-const popupQuestionIndices = [0, 3, 12, 15, 16, 17, 18, 19];
+let popupQuestionIndices = [0, 3, 12, 15, 16, 17, 18, 19];
 
 // Déclaration globale des réponses correctes et des réponses utilisateur
 let correctAnswers = [];
@@ -37,36 +99,32 @@ function openPopup() {
 }
 
 function onQuestionChange(index) {
+  // Réinitialiser l'état du bouton image
+  imgBtn.classList.remove("visible", "active");
+  imgBtn.removeEventListener("click", openPopup);
+
   const showPopup = popupQuestionIndices.includes(index);
+
   const question = questions[index];
 
-  if (showPopup && question.image) {
-    // Vérifier que l'élément imgBtn existe
-    if (!imgBtn) {
-      return;
-    }
+  // Vérifier si la question a une image valide
+  if (!question || !question.image) {
+    return;
+  }
 
-    // Mettre à jour l'image dans la popup
+  // Ajouter l'image à la popup si nécessaire
+  if (showPopup) {
     const popupImg = document.querySelector(".popup-content img");
     if (popupImg) {
       popupImg.src = question.image;
 
-      // Ajouter la classe 'active' pour afficher le bouton image
       imgBtn.classList.add("active");
       setTimeout(() => {
-        imgBtn.classList.add("visible"); // Ajouter la classe 'visible' après un léger délai
-      }, 10); // Petit délai pour permettre l'animation
+        imgBtn.classList.add("visible");
+      }, 10); // Ajouter un délai pour une transition fluide
     }
 
-    // S'assurer que l'événement de clic pour ouvrir la popup est bien ajouté
     imgBtn.addEventListener("click", openPopup);
-  } else {
-    // Si la question ne nécessite pas de popup, cacher le bouton image immédiatement
-    imgBtn.classList.remove("visible");
-    imgBtn.classList.remove("active");
-
-    // Retirer l'événement de clic pour éviter les comportements inattendus
-    imgBtn.removeEventListener("click", openPopup);
   }
 }
 
@@ -83,6 +141,8 @@ document.addEventListener("DOMContentLoaded", () => {
   exitBtn.onclick = () => {
     popupInfo.classList.remove("active");
     main.classList.remove("active");
+    resetQuizState(); // Réinitialise toutes les variables globales et l'ordre des questions
+    sessionStorage.clear(); // Efface toutes les données de session pour un état propre
   };
 
   continueBtn.onclick = () => {
@@ -91,34 +151,50 @@ document.addEventListener("DOMContentLoaded", () => {
     main.classList.remove("active");
     quizBox.classList.add("active");
 
+    shouldShuffle = false;
+
+    resetQuestionsToOriginalOrder(); // Réinitialiser l'ordre normal des questions
+
     showQuestions(0);
     questionCounter(1);
     headerScore();
     onQuestionChange(0);
   };
-
   tryAgainBtn.onclick = () => {
     sessionStorage.clear();
-    correctAnswers = questions.map((q) => q.answer); // Réinitialiser les réponses correctes
-    quizBox.classList.add("active");
-    nextBtn.classList.remove("active");
-    resultBox.classList.remove("active");
+    resetQuizState();
+    // Activer le mélange des questions
+    shouldShuffle = true;
 
+    // Mélanger les questions
+    shuffleAndReverseQuestions();
+
+    // Réinitialiser les réponses correctes après le mélange
+    correctAnswers = questions.map((q) => q.answer);
+
+    // Réinitialiser les variables de contrôle du quiz
     questionCount = 0;
     questionNumb = 1;
     userScore = 0;
+    userAnswers.length = 0; // Réinitialiser les réponses utilisateur
 
+    // Réinitialiser l'interface utilisateur
+    quizBox.classList.add("active");
+    resultBox.classList.remove("active");
+    nextBtn.classList.remove("active");
     imgBtn.classList.remove("active", "visible", "inactive");
     imgBtn.removeEventListener("click", openPopup);
+
+    // Afficher la première question
     showQuestions(questionCount);
     questionCounter(questionNumb);
     headerScore();
-    userAnswers.length = 0; // Réinitialiser les réponses utilisateur
-
     onQuestionChange(0);
   };
 
   goHomeBtn.onclick = () => {
+    // Réinitialiser tout l'état du quiz
+    resetQuizState();
     sessionStorage.clear();
     correctAnswers = questions.map((q) => q.answer); // Réinitialiser les réponses correctes
     quizSection.classList.remove("active");
@@ -128,9 +204,9 @@ document.addEventListener("DOMContentLoaded", () => {
     questionCount = 0;
     questionNumb = 1;
     userScore = 0;
-
     imgBtn.classList.remove("active", "visible", "inactive");
     imgBtn.removeEventListener("click", openPopup);
+
     showQuestions(questionCount);
     questionCounter(questionNumb);
     userAnswers.length = 0; // Réinitialiser les réponses utilisateur
@@ -139,8 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   nextBtn.onclick = () => {
-    // Ajouter transition pour cacher l'image
-    imgBtn.classList.remove("active");
+    imgBtn.classList.remove("active", "visible"); // Réinitialiser avant de changer de question
     imgBtn.classList.add("inactive");
 
     setTimeout(() => {
@@ -153,14 +228,12 @@ document.addEventListener("DOMContentLoaded", () => {
         questionCounter(questionNumb);
         nextBtn.classList.remove("active");
 
-        // Ajouter la transition pour afficher le bouton image avec un léger délai
         imgBtn.classList.remove("inactive");
-        imgBtn.classList.add("active");
-        onQuestionChange(questionCount);
+        onQuestionChange(questionCount); // Mettre à jour les images pour la nouvelle question
       } else {
         showResultBox();
       }
-    }, 200); // Utiliser un seul délai global pour la transition complète
+    }, 200);
   };
 
   closeBtn.addEventListener("click", () => togglePopup(false));
@@ -178,7 +251,6 @@ function showQuestions(index) {
   // Changer la question
   setTimeout(() => {
     questionText.textContent = `${questions[index].numb}. ${questions[index].question}`;
-    questionText.innerHTML = `${questions[index].numb}. ${questions[index].question}`;
 
     let optionTag = questions[index].options
       .map((option) => `<div class="option"><span>${option}</span></div>`)
@@ -210,6 +282,7 @@ function optionSelected(answer) {
   let correctAnswer = questions[questionCount].answer;
   let allOptions = optionList.children.length;
 
+  // le reste du code...
   if (userAnswer === correctAnswer) {
     answer.classList.add("correct");
     userScore += 1;
@@ -298,6 +371,6 @@ document
 
     // Ouvrir la page de correction dans un nouvel onglet
     setTimeout(() => {
-      window.open("correctionreseaux.html", "_blank");
+      window.open("correctionwindows.html", "_blank");
     }, 100);
   });

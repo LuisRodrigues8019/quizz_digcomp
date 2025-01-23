@@ -1,4 +1,4 @@
-const questions = [
+let questions = [
   {
     numb: 1,
     question: "Qu’est ce qu'un Webmail ?",
@@ -26,8 +26,8 @@ const questions = [
     numb: 3,
     question:
       "Dans l'image, quel onglet du navigateur correspond à un service de Webmail ?",
-    answer: "B. Onglet 1",
-    options: ["A. Onglet 2", "B. Onglet 1", "C. Onglet 3", "D. Onglet 4"],
+    answer: "B. Onglet 2",
+    options: ["A. Onglet 1", "B. Onglet 2", "C. Onglet 3", "D. Onglet 4"],
     image: "images/webmailquestion.png",
   },
   {

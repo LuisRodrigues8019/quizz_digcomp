@@ -518,4 +518,9 @@ padding-bottom: 0;
   color: #ffffff;
 }
 
+@media (max-width: 768px) {
+  .wrapper .tooltip {
+    display: none;
+  }
+}
 

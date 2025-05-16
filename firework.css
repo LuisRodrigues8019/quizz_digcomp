@@ -31,3 +31,18 @@ canvas {
   display: block;
   border-radius: 8px;
 }
+
+@media (min-width: 344px) and (max-width: 768px) {
+  .firework-wrapper {
+    width: 95vw;              /* s'adapte à presque toute la largeur de l'écran */
+    height: auto;
+    padding: 0;
+    border: 2px solid #dd743f;
+    border-radius: 8px;
+  }
+
+  canvas {
+    width: 100% !important;   /* canvas remplit le wrapper */
+    height: auto !important;  /* garde les proportions */
+  }
+}

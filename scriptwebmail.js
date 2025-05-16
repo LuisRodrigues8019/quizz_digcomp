@@ -372,7 +372,7 @@ function showResultBox() {
 
       setTimeout(() => {
         iframe.remove();
-      }, 5000);
+      }, 6000);
     }, 3000); // ⏳ petite pause pour laisser le temps au résultat de s'afficher
   }
 }

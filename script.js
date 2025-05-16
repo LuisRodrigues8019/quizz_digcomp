@@ -354,6 +354,26 @@ function showResultBox() {
       clearInterval(progress);
     }
   }, speed);
+
+  if (userScore === questions.length) {
+    setTimeout(() => {
+      const iframe = document.createElement("iframe");
+      iframe.src = "firework.html"; // 🔁 chemin à adapter si nécessaire
+      iframe.style.position = "fixed";
+      iframe.style.top = "0";
+      iframe.style.left = "0";
+      iframe.style.width = "100vw";
+      iframe.style.height = "100vh";
+      iframe.style.zIndex = "9999";
+      iframe.style.border = "none";
+
+      document.body.appendChild(iframe);
+
+      setTimeout(() => {
+        iframe.remove();
+      }, 6000);
+    }, 3000); // ⏳ petite pause pour laisser le temps au résultat de s'afficher
+  }
 }
 
 // lien vers correction.html

@@ -393,6 +393,6 @@ document
 
     // Ouvrir la page de correction dans un nouvel onglet
     setTimeout(() => {
-      window.open("correctionwindows.html", "_blank");
+      window.open("correctionhardware.html", "_blank");
     }, 100);
   });

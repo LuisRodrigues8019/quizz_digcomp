@@ -286,7 +286,6 @@ body {
   transform: translateY(0); /* Ramène à la position originale */
 }
 
-
 .option-list .option {
   width: 100%;
   padding: 12px;
@@ -309,7 +308,6 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
-
 
 .option-list .option:hover {
   background: rgba(255, 255, 255, 0.1);
@@ -398,16 +396,16 @@ body {
   cursor: pointer;
 }
 
-
 .img-btn.inactive {
   opacity: 0; /* Transition vers invisible */
-  transform: translateY(10px); /* Déplacement vers le bas pour un effet de glissement */
+  transform: translateY(
+    10px
+  ); /* Déplacement vers le bas pour un effet de glissement */
 }
 
 .img-btn.active:hover {
   background-color: #eb6929;
 }
-
 
 /* image popup */
 
@@ -536,7 +534,13 @@ body {
 .percentage-container .score-text {
   font-size: 26px;
   font-weight: 600;
-  margin-top: 20px;
+  margin-top: 10px;
+}
+
+.hardware-quizz {
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 10px;
 }
 
 .result-box .buttons {
@@ -583,15 +587,25 @@ body {
   color: #fff;
 }
 
-.result-box .correction {
-  color: #dd743f;
+.correction-btn {
+  width: 120px;
+  height: 40px;
+  background: #eb6929;
+  border: 2px solid #dd743f;
+  outline: none;
+  color: #fff;
+  border-radius: 6px;
   font-size: 16px;
-  margin-top: 10px;
+  font-weight: 600;
+  margin-top: 25px;
+  margin-bottom: 0px;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
-.correction a {
-  text-decoration: none;
-  color: #dd743f;
+.correction-btn:hover {
+  background: #dd743f;
+  border-color: #dd743f;
 }
 
 /* responsive */
@@ -797,10 +811,6 @@ body {
     font-size: 20px;
   }
 
-  .result-box .correction {
-    font-size: 16px;
-  }
-
   .buttons .goHome-btn,
   .buttons .correctif-btn {
     width: 90px;
@@ -808,6 +818,18 @@ body {
 
   .buttons .tryAgain-btn {
     width: 115px;
+  }
+
+  .correction-btn {
+    width: 90px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .hardware-quizz {
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 10px;
   }
 }
 

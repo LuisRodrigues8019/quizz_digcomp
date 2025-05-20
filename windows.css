@@ -469,7 +469,6 @@ body {
   transform: rotate(360deg); /* Rotation à 360 degrés lors du survol */
 }
 
-
 .quiz-section .result-box {
   position: absolute;
   top: 50%;
@@ -535,7 +534,13 @@ body {
 .percentage-container .score-text {
   font-size: 26px;
   font-weight: 600;
-  margin-top: 20px;
+  margin-top: 10px;
+}
+
+.windows-quizz {
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 10px;
 }
 
 .result-box .buttons {
@@ -582,15 +587,25 @@ body {
   color: #fff;
 }
 
-.result-box .correction {
-  color: #dd743f;
+.correction-btn {
+  width: 120px;
+  height: 40px;
+  background: #eb6929;
+  border: 2px solid #dd743f;
+  outline: none;
+  color: #fff;
+  border-radius: 6px;
   font-size: 16px;
-  margin-top: 10px;
+  font-weight: 600;
+  margin-top: 25px;
+  margin-bottom: 0px;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
-.correction a {
-  text-decoration: none;
-  color: #dd743f;
+.correction-btn:hover {
+  background: #dd743f;
+  border-color: #dd743f;
 }
 
 /* responsive */
@@ -769,7 +784,6 @@ body {
     right: -12px;
     width: 30px;
     height: 30px;
-   
   }
 
   .close-btn i {
@@ -797,10 +811,6 @@ body {
     font-size: 20px;
   }
 
-  .result-box .correction {
-    font-size: 16px;
-  }
-
   .buttons .goHome-btn,
   .buttons .correctif-btn {
     width: 90px;
@@ -808,6 +818,18 @@ body {
 
   .buttons .tryAgain-btn {
     width: 115px;
+  }
+
+  .correction-btn {
+    width: 90px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .windows-quizz {
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 10px;
   }
 }
 
@@ -890,7 +912,6 @@ body {
     right: -12px;
     width: 25px;
     height: 25px;
-   
   }
 
   .close-btn i {

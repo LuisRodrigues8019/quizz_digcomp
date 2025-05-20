@@ -794,7 +794,7 @@ body {
   .buttons button {
     height: 40px;
     font-size: 14px;
-    margin-top: -10px;
+    margin-top: -17px;
   }
 
   .result-box h2 {
@@ -818,6 +818,7 @@ body {
     width: 90px;
     height: 40px;
     font-size: 14px;
+    margin-top: 15px;
   }
 
   .webmail-quizz {

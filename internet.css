@@ -801,6 +801,8 @@ body {
   .buttons button {
     height: 40px;
     font-size: 14px;
+    margin-top: -17px;
+    margin-bottom: 8px;
   }
 
   .result-box h2 {
@@ -824,6 +826,7 @@ body {
     width: 90px;
     height: 40px;
     font-size: 14px;
+    margin-top: 15px;
   }
 
   .internet-quizz {

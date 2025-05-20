@@ -794,6 +794,7 @@ body {
   .buttons button {
     height: 40px;
     font-size: 14px;
+    margin-top: -10px;
   }
 
   .result-box h2 {
